@@ -21,7 +21,7 @@
             justify-content: center;
             align-items: center;
             /* height: 100vh; */
-            padding: 0 1.25em;
+            padding: 0 1em;
         }
 
         .header {
@@ -30,9 +30,9 @@
         }
 
         .headline {
-            width: 100%;
+            /* width: 100%; */
             text-align: right;
-            font-size: 2.4em;
+            font-size: 3em;
             color: #3e476f;
             color: #FA7A04;
             font-family: 'Vidaloka', serif;
@@ -42,11 +42,12 @@
         }
 
         .subline {
-            width: 100%;
+            font-family: 'Vidaloka', serif;
+            /* width: 100%; */
             text-align: right;
-            font-weight: bold;
+            /* font-weight: bold; */
             margin: 0.2em 0;
-            font-size: 1.2em;
+            font-size: 2em;
         }
 
         .links {
@@ -64,9 +65,10 @@
 
         .segmentHeader {
             font-family: 'Vidaloka', serif;
-            font-size: 3em;
+            font-size: 2.5em;
             border-bottom: 0.1em black solid;
             margin-top: .5em;
+            font-weight: bold;
         }
 
         .textContent {
@@ -84,7 +86,8 @@
         }
 
         .inlineLink:hover {
-            background: black;
+            transition: all .3s;
+            background-color: black;
             color: white;
         }
 
@@ -103,6 +106,7 @@
         @media (min-height: 800px) {
             .content {
                 height: 100vh;
+                padding: 0 2em;
             }
         }
     </style>
@@ -112,14 +116,15 @@
     <div class="content">
         <div class="header">
             <h1 class="headline">Emmanuel Meinike</h1>
-            <p class="subline">Fullstack Web Developer</p>
+            <p class="subline">Web Developer</p>
         </div>
         <div class="segmentHeader left">
             <div class="segmentHeaderText">01 About</div>
         </div>
         <div class="textContent left">
-            I'm a web developer, currently building frontends with ReactJS and backends with NodeJS at <a class="inlineLink"
-                href="https://www.fashionid.de/" target="_blank">FashionID</a>.
+            I'm a web developer, currently building frontends with ReactJS and backends with NodeJS in Düsseldorf,
+            Germany.
+            <br><br>
             I also like playing around with Unity3D.
         </div>
 
@@ -128,9 +133,9 @@
         </div>
         <div class="textContent right">
             You can check out my code on <a class="inlineLink" href="https://github.com/kuukienator" target="_blank">Github</a>.
-            If you want to connect with me, check out <a class="inlineLink" target="_blank" href="https://www.xing.com/profile/Emmanuel_Meinike/cv">Xing</a>
-            or <a class="inlineLink" target="_blank" href="www.linkedin.com/in/emmanuel-meinike-11185541">LinkedIn</a>.
-            You can also hit up my <a class="inlineLink" target="_blank" href="mailto:emmanuel.meinike@gmail.com">e-mail</a>.
+            If you want to connect, check out my <a class="inlineLink" target="_blank" href="https://www.xing.com/profile/Emmanuel_Meinike/cv">Xing</a>
+            or <a class="inlineLink" target="_blank" href="www.linkedin.com/in/emmanuel-meinike-11185541">LinkedIn</a>
+            profile. You can also hit up my <a class="inlineLink" target="_blank" href="mailto:emmanuel.meinike@gmail.com">email</a>.
         </div>
         <!-- <div class="segmentHeader">
             <div class="segmentHeaderText">01 About</div>

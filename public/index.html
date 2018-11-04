@@ -80,6 +80,12 @@
         .inlineLink {
             font-weight: bold;
             text-decoration: underline;
+            color: initial;
+        }
+
+        .inlineLink:hover {
+            background: black;
+            color: white;
         }
 
         .left {
@@ -112,7 +118,8 @@
             <div class="segmentHeaderText">01 About</div>
         </div>
         <div class="textContent left">
-            I'm a web developer, currently building frontends with ReactJS and backends with NodeJS at <span class="inlineLink">FashionID</span>.
+            I'm a web developer, currently building frontends with ReactJS and backends with NodeJS at <a class="inlineLink"
+                href="https://www.fashionid.de/" target="_blank">FashionID</a>.
             I also like playing around with Unity3D.
         </div>
 
@@ -120,9 +127,10 @@
             <div class="segmentHeaderText">02 Contact</div>
         </div>
         <div class="textContent right">
-            You can check out my code on <span class="inlineLink">Github</span>. If you want to connect with me, check
-            out <span class="inlineLink">Xing</span> or <span class="inlineLink">LinkedIn</span>. You can also hit up
-            my <span class="inlineLink">e-mail</span>.
+            You can check out my code on <a class="inlineLink" href="https://github.com/kuukienator" target="_blank">Github</a>.
+            If you want to connect with me, check out <a class="inlineLink" target="_blank" href="https://www.xing.com/profile/Emmanuel_Meinike/cv">Xing</a>
+            or <a class="inlineLink" target="_blank" href="www.linkedin.com/in/emmanuel-meinike-11185541">LinkedIn</a>.
+            You can also hit up my <a class="inlineLink" target="_blank" href="mailto:emmanuel.meinike@gmail.com">e-mail</a>.
         </div>
         <!-- <div class="segmentHeader">
             <div class="segmentHeaderText">01 About</div>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Emmanuel Meinike</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Vidaloka" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Vidaloka|Source+Serif+Pro" rel="stylesheet">
 
     <style>
         body {
@@ -21,17 +21,29 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            padding: 0 1.25em;
+        }
+
+        .header {
+            width: 100%;
+            margin-bottom: 2em;
         }
 
         .headline {
-            font-size: 2.3em;
-            color: #505a83;
+            width: 100%;
+            text-align: right;
+            font-size: 2.4em;
+            color: #3e476f;
+            color: #FA7A04;
             font-family: 'Vidaloka', serif;
-            font-weight: normal;
+            /* font-family: 'Source Serif Pro', serif; */
+            /* font-weight: normal; */
             margin: 0.2em 0;
         }
 
         .subline {
+            width: 100%;
+            text-align: right;
             font-weight: bold;
             margin: 0.2em 0;
             font-size: 1.2em;
@@ -49,18 +61,54 @@
             margin: 0 1em;
             padding: .5em;
         }
+
+        .segmentHeader {
+            width: 60%;
+            font-size: 1.8em;
+            border-bottom: 2px black solid;
+            align-self: flex-start;
+        }
+
+        .textContent {
+            font-family: 'Vidaloka', serif;
+
+            font-size: 2em;
+            margin-top: 1em;
+        }
+
+        .inlineLink {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
     <div class="content">
-        <h1 class="headline">Emmanuel Meinike</h1>
-        <p class="subline">Fullstack Web Developer</p>
-        <div class="links">
+        <div class="header">
+            <h1 class="headline">Emmanuel Meinike</h1>
+            <p class="subline">Fullstack Web Developer</p>
+        </div>
+        <div class="textContent">
+            I'm a web developer, currently building frontends with ReactJS and backends with NodeJS at <span class="inlineLink">FashionID</span>.
+            I also like playing around with Unity3D.
+        </div>
+        <div class="textContent">
+            You can check out my code on <span class="inlineLink">Github</span>. If you want to connect with me, check
+            out <span class="inlineLink">Xing</span>
+            or <span class="inlineLink">LinkedIn</span>. You can also hit me up with my <span class="inlineLink">e-mail</span>.
+        </div>
+        <!-- <div class="segmentHeader">
+            <div class="segmentHeaderText">01 About</div>
+        </div>
+        <div class="segmentHeader">
+            <div class="segmentHeaderText">02 Contact</div>
+        </div> -->
+        <!-- <div class="links">
             <div class="link">Github</div>
             <div class="link">Xing</div>
             <div class="link">LinkedIn</div>
-        </div>
+        </div> -->
     </div>
 
 </body>

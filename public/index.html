@@ -63,22 +63,35 @@
         }
 
         .segmentHeader {
-            width: 60%;
-            font-size: 1.8em;
-            border-bottom: 2px black solid;
-            align-self: flex-start;
+            font-family: 'Vidaloka', serif;
+            font-size: 2.5em;
+            border-bottom: 0.1em black solid;
+            margin-top: .5em;
         }
 
         .textContent {
             font-family: 'Vidaloka', serif;
-
+            line-height: 1.4em;
             font-size: 2em;
             margin: 1em 0;
+            margin-top: 0.5em;
         }
 
         .inlineLink {
             font-weight: bold;
             text-decoration: underline;
+        }
+
+        .left {
+            text-align: left;
+            align-self: flex-start;
+
+        }
+
+        .right {
+            text-align: right;
+            align-self: flex-end;
+
         }
 
         @media (min-height: 800px) {
@@ -95,14 +108,21 @@
             <h1 class="headline">Emmanuel Meinike</h1>
             <p class="subline">Fullstack Web Developer</p>
         </div>
-        <div class="textContent">
+        <div class="segmentHeader left">
+            <div class="segmentHeaderText">01. About</div>
+        </div>
+        <div class="textContent left">
             I'm a web developer, currently building frontends with ReactJS and backends with NodeJS at <span class="inlineLink">FashionID</span>.
             I also like playing around with Unity3D.
         </div>
-        <div class="textContent">
+
+        <div class="segmentHeader right">
+            <div class="segmentHeaderText">02. Contact</div>
+        </div>
+        <div class="textContent right">
             You can check out my code on <span class="inlineLink">Github</span>. If you want to connect with me, check
-            out <span class="inlineLink">Xing</span>
-            or <span class="inlineLink">LinkedIn</span>. You can also hit me up with my <span class="inlineLink">e-mail</span>.
+            out <span class="inlineLink">Xing</span> or <span class="inlineLink">LinkedIn</span>. You can also hit up
+            my <span class="inlineLink">e-mail</span>.
         </div>
         <!-- <div class="segmentHeader">
             <div class="segmentHeaderText">01 About</div>

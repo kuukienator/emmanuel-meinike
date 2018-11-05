@@ -13,6 +13,32 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            /*
+            Colors:
+            #da157e
+            #9f1b80
+            #591457
+            */
+
+            --backgroundColor: #fff;
+            --textColor: #000;
+            --accentColor: #FA7A04;
+
+            /*
+            --backgroundColor: #243f93;
+            --textColor: #fff;
+            --accentColor: #f3896f;
+
+            --backgroundColor: #b11f24;
+            --textColor: #fff;
+            --accentColor: #9cd5c4;
+
+            --backgroundColor: #00b4b1;
+            --textColor: #fff;
+            --accentColor: #f9e093;
+            */
+            background-color: var(--backgroundColor);
+            color: var(--textColor);
         }
 
         .content {
@@ -25,7 +51,8 @@
         }
 
         .header {
-            width: 100%;
+            align-self: flex-end;
+            /* width: 100%; */
             margin: 2em 0;
         }
 
@@ -33,8 +60,7 @@
             /* width: 100%; */
             text-align: right;
             font-size: 3em;
-            color: #3e476f;
-            color: #FA7A04;
+            color: var(--accentColor);
             font-family: 'Vidaloka', serif;
             /* font-family: 'Source Serif Pro', serif; */
             /* font-weight: normal; */
@@ -58,23 +84,28 @@
         }
 
         .link {
-            border: 2px solid black;
+            border: 2px solid var(--textColor);
             margin: 0 1em;
             padding: .5em;
         }
 
         .segmentHeader {
             font-family: 'Vidaloka', serif;
-            font-size: 2.5em;
-            border-bottom: 0.1em black solid;
+            font-size: 2.2em;
+            border-bottom: 0.1em var(--textColor) solid;
             margin-top: .5em;
             font-weight: bold;
+
+            background: var(--accentColor);
+            color: var(--backgroundColor);
+            padding: 0.1em 0.2em;
+            border: none;
         }
 
         .textContent {
             font-family: 'Vidaloka', serif;
             line-height: 1.4em;
-            font-size: 2em;
+            font-size: 1.8em;
             margin: 1em 0;
             margin-top: 0.5em;
         }
@@ -82,13 +113,13 @@
         .inlineLink {
             font-weight: bold;
             text-decoration: underline;
-            color: initial;
+            color: inherit;
         }
 
         .inlineLink:hover {
             transition: all .3s;
-            background-color: black;
-            color: white;
+            background-color: var(--textColor);
+            color: var(--backgroundColor);
         }
 
         .left {
@@ -103,7 +134,7 @@
 
         }
 
-        @media (min-height: 800px) {
+        @media (min-width: 850px) {
             .content {
                 height: 100vh;
                 padding: 0 2em;

@@ -227,29 +227,41 @@
 
     <script>
         const colors = [{
-                background: ' #fff',
+                background: '#fff',
                 accent: '#fa7a04',
                 text: '#000',
                 id: 0
             },
             {
-                background: ' #243f93',
-                accent: '#f3896f',
-                text: '#fff',
+                background: '#fff',
+                accent: '#ff5851',
+                text: '#000',
                 id: 1
             },
             {
-                background: ' #b11f24',
-                accent: '#9cd5c4',
+                background: '#243f93',
+                accent: '#f3896f',
                 text: '#fff',
                 id: 2
             },
             {
-                background: ' #00b4b1',
-                accent: '#f9e093',
+                background: '#b11f24',
+                accent: '#9cd5c4',
                 text: '#fff',
                 id: 3
-            }
+            },
+            {
+                background: '#00b4b1',
+                accent: '#f9e093',
+                text: '#fff',
+                id: 4
+            },
+            // {
+            //     background: '#ff5851',
+            //     accent: '#f8f8f8',
+            //     text: '#fff',
+            //     id: 5
+            // }
         ];
 
         let activeColorIndex = 0;
@@ -305,9 +317,9 @@
             if (!colorsExpanded) {
                 colorsExpanded = true;
                 const sortedColors = colors
-                    .filter(c => activeColorIndex.id === c.id)
+                    .filter(c => activeColorIndex === c.id)
                     .concat(
-                        colors.filter(c => activeColorIndex.id !== c.id)
+                        colors.filter(c => activeColorIndex !== c.id)
                     );
 
                 colorsElement.innerHTML = '';

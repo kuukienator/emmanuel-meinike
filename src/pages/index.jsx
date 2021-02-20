@@ -76,15 +76,15 @@ const CODE = [
 
 export default function Home() {
     return (
-        <>
-            <section>
-                <h1>Hello <span role="img" aria-label="waving hand emoji">👋</span></h1>
-                <p>I'm Emmanuel, a web developer. I like building small web things and creating generative art.</p>
+        <div className="container mx-auto flex flex-col my-24">
+            <section className="my-5">
+                <h1 className="text-5xl font-serif text-center">Hello, I'm Emmanuel <span role="img" aria-label="waving hand emoji">👋</span>.</h1>
+                <p className="text-center">I'm a web developer that likes building small web things and creating generative art.</p>
             </section>
 
-            <section>
-                <h2>Wanna see some cool things?</h2>
-                <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <section className="my-5">
+                <h2 className="text-3xl font-serif text-center">Wanna see some cool things?</h2>
+                <div className="flex flex-wrap">
                     {COOL_THINGS.map(thing => (
                         <PreviewLink key={`${thing.title}-${thing.href}`} href={thing.href} image={thing.image} title={thing.title} />
                     ))}
@@ -92,23 +92,23 @@ export default function Home() {
             </section>
 
 
-            <section>
-                <h2>Wanna look at some code?</h2>
+            <section className="my-5">
+                <h2 className="text-3xl font-serif text-center">Wanna look at some code?</h2>
                 <ul>
-                    {CODE.map(entry => (<li key={entry.label}><a href={entry.url} rel="noopener" target="_blank">{entry.label}</a></li>))}
+                    {CODE.map(entry => (<li key={entry.label}><a href={entry.url} rel="noopener noreferrer" target="_blank">{entry.label}</a></li>))}
                 </ul>
             </section>
 
-            <section>
-                <h2>Wanna talk?</h2>
+            <section className="my-5">
+                <h2 className="text-3xl font-serif text-center">Wanna talk?</h2>
                 <ul>
-                    {CONTACT.map(entry => (<li key={entry.label}><a href={entry.url} rel="noopener" target="_blank">{entry.label}</a></li>))}
+                    {CONTACT.map(entry => (<li key={entry.label}><a href={entry.url} rel="noopener noreferrer" target="_blank">{entry.label}</a></li>))}
                 </ul>
             </section>
 
-            <footer>
+            <footer className="bg-black text-white text-center w-full align-bottom">
                 Emmanuel Meinike - 2021
             </footer>
-        </>
+        </div>
     );
 }

@@ -1,0 +1,25 @@
+{
+    "name": "emmanuel-meinike",
+    "version": "1.0.0",
+    "description": "Me",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "gatsby develop"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kuukienator/emmanuel-meinike.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kuukienator/emmanuel-meinike/issues"
+    },
+    "homepage": "https://github.com/kuukienator/emmanuel-meinike#readme",
+    "dependencies": {
+        "gatsby": "^2.32.4",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    }
+}

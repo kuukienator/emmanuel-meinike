@@ -62,3 +62,6 @@ typings/
 
 #InetliJ
 .idea
+
+# Gatsby build cache
+.cache

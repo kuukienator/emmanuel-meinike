@@ -74,20 +74,22 @@ export default function Home() {
 
       <main className="px-4 mt-8 md:px-10">
         <h1
-          className="text-4xl text-center mb-8 sm:text-6xl"
+          className="text-4xl text-left mb-8 font-bold sm:text-6xl"
           style={{ fontFamily: "'Roboto Slab', serif" }}
         >
-          hi, I&apos;m emmanuel 👋
+          <p>Hi, I&apos;m Emmanuel 👋.</p>
+          <p>Web developer and creative coder.</p>
         </h1>
         <p className="mb-4 text-lg">
-          I&apos;m a web developer and creative coder. I like building things
-          big and small. The languages I currently like working with are
-          Javascript (and Typescript) while using frameworks like React, NodeJS
-          and the browser Canvas. I dabble in other languages like C# and Scala
-          from time to time as well.
+          I like building things big and small. The languages I currently like
+          working with are Javascript (and Typescript) while using frameworks
+          like React, NodeJS and the browser Canvas. I dabble in other languages
+          like C# and Scala from time to time as well.
         </p>
 
-        <SectionHeader># Wanna see some cool things?</SectionHeader>
+        <SectionHeader leftContent="#">
+          Wanna see some cool things?
+        </SectionHeader>
         <div className="flex flex-col sm:flex-row">
           {IMAGE_LINKS.map((i) => (
             <ImageLink
@@ -104,28 +106,9 @@ export default function Home() {
             <a>see more &gt;</a>
           </Link>
         </div>
-        {/* <iframe
-          height={600}
-          style={{ width: '100%' }}
-          scrolling="no"
-          title="Saul Bass-ified"
-          src="https://codepen.io/kuukienator/embed/preview/qBrKVYQ?default-tab=result"
-          frameBorder="no"
-          loading="lazy"
-          allowtransparency="true"
-          allowFullScreen={true}
-        >
-          See the Pen{' '}
-          <a href="https://codepen.io/kuukienator/pen/qBrKVYQ">
-            Saul Bass-ified
-          </a>{' '}
-          by Emmanuel Meinike (
-          <a href="https://codepen.io/kuukienator">@kuukienator</a>) on{' '}
-          <a href="https://codepen.io">CodePen</a>.
-        </iframe> */}
-        <SectionHeader># Wanna see some code?</SectionHeader>
+        <SectionHeader leftContent="#">Wanna see some code?</SectionHeader>
         <LinkList links={CODE} />
-        <SectionHeader># Wanna talk and connect?</SectionHeader>
+        <SectionHeader leftContent="#">Wanna talk and connect?</SectionHeader>
         <LinkList links={CONTACT} />
       </main>
     </div>

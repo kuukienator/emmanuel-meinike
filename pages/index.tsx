@@ -69,11 +69,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-4 mt-8">
+      <main className="px-4 mt-8 md:px-10">
         <h1 className="text-4xl text-center mb-8 sm:text-6xl">
           Hi, I&apos;m Emmanuel 👋
         </h1>
-        <p className="mb-4">
+        <p className="mb-4 text-lg">
           I&apos;m a web developer and creative coder. I like building things
           big and small. The languages I currently like working with are
           Javascript (and Typescript) while using frameworks like React, NodeJS
@@ -115,8 +115,6 @@ export default function Home() {
         <SectionHeader># Wanna see some code?</SectionHeader>
         <SectionHeader># Wanna talk and connect?</SectionHeader>
       </main>
-
-      <footer className="text-center">Emmanuel Meinike - 2021</footer>
     </div>
   );
 }

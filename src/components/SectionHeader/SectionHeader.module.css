@@ -1,0 +1,12 @@
+.SectionHeader {
+    background-color: #fa7a04;
+    color: white;
+    width: auto;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.SectionHeader::before {
+    content: "";
+    background-color: black;
+}

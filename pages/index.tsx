@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import React from 'react';
 import ImageLink from '../components/ImageLink';
+import LinkList, { LinkElement } from '../components/LinkList';
 import SectionHeader from '../components/SectionHeader';
 
 type ImageLinkType = {
@@ -30,7 +33,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
 ];
 
-const CONTACT = [
+const CONTACT: Array<LinkElement> = [
   {
     label: 'Xing',
     url: 'https://www.xing.com/profile/Emmanuel_Meinike/cv',
@@ -49,7 +52,7 @@ const CONTACT = [
   },
 ];
 
-const CODE = [
+const CODE: Array<LinkElement> = [
   {
     label: 'GitHub',
     url: 'https://github.com/kuukienator',
@@ -70,8 +73,11 @@ export default function Home() {
       </Head>
 
       <main className="px-4 mt-8 md:px-10">
-        <h1 className="text-4xl text-center mb-8 sm:text-6xl">
-          Hi, I&apos;m Emmanuel 👋
+        <h1
+          className="text-4xl text-center mb-8 sm:text-6xl"
+          style={{ fontFamily: "'Roboto Slab', serif" }}
+        >
+          hi, I&apos;m emmanuel 👋
         </h1>
         <p className="mb-4 text-lg">
           I&apos;m a web developer and creative coder. I like building things
@@ -93,6 +99,11 @@ export default function Home() {
             />
           ))}
         </div>
+        <div>
+          <Link href="/projects">
+            <a>see more &gt;</a>
+          </Link>
+        </div>
         {/* <iframe
           height={600}
           style={{ width: '100%' }}
@@ -113,7 +124,9 @@ export default function Home() {
           <a href="https://codepen.io">CodePen</a>.
         </iframe> */}
         <SectionHeader># Wanna see some code?</SectionHeader>
+        <LinkList links={CODE} />
         <SectionHeader># Wanna talk and connect?</SectionHeader>
+        <LinkList links={CONTACT} />
       </main>
     </div>
   );

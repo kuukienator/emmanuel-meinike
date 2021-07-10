@@ -1,19 +1,15 @@
 import React, { FC } from 'react';
-
-export type LinkElement = {
-  url: string;
-  label: string;
-};
+import Link, { LinkElement } from '../Link';
 
 type Props = {
   links: Array<LinkElement>;
 };
 
 const LinkList: FC<Props> = ({ links }) => (
-  <ul className="flex justify-center pb-4 text-secondary font-bold">
+  <ul className="flex justify-center pb-4">
     {links.map((c) => (
-      <li key={c.url} className="mx-2 p-1 border-b-2 border-secondary">
-        <a href={c.url}>{c.label.toUpperCase()}</a>
+      <li key={c.url}>
+        <Link label={c.label} url={c.url} />
       </li>
     ))}
   </ul>

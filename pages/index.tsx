@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import React from 'react';
 import ImageLink from '../components/ImageLink';
-import LinkList, { LinkElement } from '../components/LinkList';
+import Link, { LinkElement } from '../components/Link';
+import LinkList from '../components/LinkList';
 import Section, { BackgroundType } from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
 
@@ -57,13 +57,13 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     description: 'Create some random sunny-side up eggs. Delecious.',
     url: 'https://codepen.io/kuukienator/full/mdrQeOm',
   },
-  {
-    image: '/images/2021.00001.01.png',
-    altText: 'Some circles screenshot - 1',
-    title: 'Some circles',
-    description: 'Just some circles',
-    url: 'https://codepen.io/kuukienator/full/PoWyQKM',
-  },
+  // {
+  //   image: '/images/2021.00001.01.png',
+  //   altText: 'Some circles screenshot - 1',
+  //   title: 'Some circles',
+  //   description: 'Just some circles',
+  //   url: 'https://codepen.io/kuukienator/full/PoWyQKM',
+  // },
   {
     image: '/images/exploring-dithering-1.png',
     altText: 'Exploring Dithering screenshot - 1',
@@ -124,9 +124,9 @@ export default function Home() {
             src="/images/me-dither-3.png"
             alt="Emmanuel Meinike - Dithered"
           /> */}
-          <h1 className="font-serif text-4xl text-left mb-8 font-bold sm:text-6xl text-secondary">
-            <p>Hi, I&apos;m Emmanuel 👋.</p>
-            <p>Web developer and creative coder.</p>
+          <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-secondary">
+            <p>Hi, I&apos;m Emmanuel 👋,</p>
+            <p>web developer and creative coder.</p>
           </h1>
           <p className="mb-4 text-lg">
             I like building things big and small. Working with Javascript (and
@@ -160,10 +160,8 @@ export default function Home() {
               />
             ))}
           </div>
-          <div>
-            <Link href="/projects">
-              <a>see more stuff &gt;</a>
-            </Link>
+          <div className="flex flex-row-reverse">
+            <Link url="/projects" label="see more stuff &gt;" />
           </div>
         </Section>
         <Section backgroundType={BackgroundType.Primary}>
@@ -174,14 +172,19 @@ export default function Home() {
         </Section>
         <Section>
           <SectionHeader leftContent="#">Wanna see some code?</SectionHeader>
-          You can take a look at my bigger projects and smaller sketches and
-          ideas.
+          <p className="mb-2">
+            You can take a look at my bigger projects on and smaller sketches
+            and ideas.
+          </p>
           <LinkList links={CODE} />
         </Section>
         <Section>
           <SectionHeader leftContent="#">Wanna talk and connect?</SectionHeader>
-          We can connect on Twitter or you can reach out with email. I you want
-          to see a more formal overview, head on over to LinkedIn or Xing.
+          <p className="mb-2">
+            We can connect on Twitter or you can reach out with email. I you
+            want to see a more formal overview, head on over to LinkedIn or
+            Xing.
+          </p>
           <LinkList links={CONTACT} />
         </Section>
         <Section backgroundType={BackgroundType.Primary}>

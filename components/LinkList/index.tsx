@@ -10,12 +10,10 @@ type Props = {
 };
 
 const LinkList: FC<Props> = ({ links }) => (
-  <ul className="flex justify-center mb-4">
+  <ul className="flex justify-center pb-4 text-secondary font-bold">
     {links.map((c) => (
-      <li key={c.url} className="border-r-2 px-4 last:border-r-0">
-        <a className="hover:border-b-2" href={c.url}>
-          {c.label.toUpperCase()}
-        </a>
+      <li key={c.url} className="mx-2 p-1 border-b-2 border-secondary">
+        <a href={c.url}>{c.label.toUpperCase()}</a>
       </li>
     ))}
   </ul>

@@ -5,15 +5,11 @@ type Props = {
 };
 
 const SectionHeader: FC<Props> = ({ children, leftContent }) => (
-  <h2
-    className="text-xl text-left mt-8 mb-8 font-bold p-3"
-    style={{ fontFamily: "'Roboto Slab', serif", background: 'white' }}
-  >
+  <h2 className="font-serif text-xl text-secondary text-left mt-8 mb-8 font-bold p-3 bg-primary relative">
+    <div className="w-full h-full block absolute -z-10 bg-secondary"></div>
     <div className="flex">
       {leftContent && (
-        <span className="mr-3" style={{ color: 'rgba(148,187,233,1)' }}>
-          {leftContent}
-        </span>
+        <span className="mr-3 text-secondary">{leftContent}</span>
       )}
       {children}
     </div>

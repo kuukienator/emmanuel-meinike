@@ -20,13 +20,8 @@ const HEADER_LINKS = [
 const Header = () => {
   const router = useRouter();
   return (
-    <header className="flex justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center">
-      <div
-        className="font-bold border-2 p-1 rounded-xl"
-        style={{ fontFamily: '"Roboto Slab", serif', borderColor: 'black' }}
-      >
-        EM
-      </div>
+    <header className="flex font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-copy">
+      <div className="font-bold border-2 p-1 rounded-xl border-copy">EM</div>
       <nav>
         <ul className="flex">
           {HEADER_LINKS.map((l) => {
@@ -34,7 +29,9 @@ const Header = () => {
             const styles = isActive
               ? { color: 'white', background: 'black' }
               : {};
-            const classes = isActive ? 'mx-2 p-1 border-b-2' : 'p-1 mx-2';
+            const classes = isActive
+              ? 'p-1 px-2 mx-1 bg-secondary rounded-xl'
+              : 'p-1 px-2 mx-1';
             return (
               <li className={classes} key={l.label + l.path}>
                 <Link href={l.path}>

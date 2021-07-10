@@ -136,11 +136,8 @@ export default function Home() {
           </p>
           <p className="mb-4 text-lg">
             Apart from this, I also enjoy drawing, 3D modelling and game
-            developement.
-          </p>
-          <p className="mb-4 text-lg">
-            You can call me Ema for short and find throughout the web as
-            @kuukienator.
+            developement. As you can see, I also try my hand in designing every
+            now and then.
           </p>
           <LinkList links={CONTACT_COMPACT} />
         </Section>

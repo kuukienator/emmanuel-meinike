@@ -20,8 +20,8 @@ const HEADER_LINKS = [
 const Header = () => {
   const router = useRouter();
   return (
-    <header className="flex font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-copy">
-      <div className="font-bold border-2 p-1 rounded-xl border-copy">EM</div>
+    <header className="font-light flex flex-row-reverse font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-white">
+      {/* <div className="font-bold border-2 p-1 rounded-xl border-copy">EM</div> */}
       <nav>
         <ul className="flex">
           {HEADER_LINKS.map((l) => {
@@ -30,8 +30,9 @@ const Header = () => {
               ? { color: 'white', background: 'black' }
               : {};
             const classes = isActive
-              ? 'p-1 px-2 mx-1 bg-secondary rounded-xl'
-              : 'p-1 px-2 mx-1';
+              ? // ? 'p-1 px-1 mx-1 border-2 border-black'
+                'p-1 px-1 mx-1 font-bold'
+              : 'p-1 px-1 mx-1';
             return (
               <li className={classes} key={l.label + l.path}>
                 <Link href={l.path}>

@@ -4,23 +4,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#01937C',
+        // primary: '#01937C',
+        primary: '#f26419',
         // primary: '#243f93',
         // primary: '#b11f24',
         // secondary: '#f3896f',
         // secondary: '#383E56',
         // secondary: '#00b4b1',
-        secondary: '#383E56',
-        copy: 'white',
+        secondary: 'black',
+        copy: 'black',
       },
       zIndex: {
         '-10': '-10',
       },
     },
     fontFamily: {
-      sans: ['Open Sans', 'sans-serif'],
-      // serif: ['Roboto Slab', 'serif'],
+      sans: ['Rubik', 'sans-serif'], // Fira Sans,Montserrat, Source Sans Pro
+      // sans: ['Rubik', 'sans-serif'],
+      // sans: ['Open Sans', 'sans-serif'],
       serif: ['Zilla Slab', 'serif'],
+      // serif: ['Roboto Slab', 'serif'],
     },
   },
   variants: {

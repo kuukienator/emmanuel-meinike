@@ -11,20 +11,20 @@ type Props = {
 };
 
 const ImageLink: FC<Props> = ({ altText, description, image, title, url }) => (
-  <div className="flex flex-col overflow-hidden box-content sm:w-1/2 lg:w-1/3 xl:w-1/4 pb-3 text-copy justify-between items-end">
-    <div className="m-2 bg-primary border-t-2 border-l-2 border-r-2 border-primary overflow-hidden">
+  <div className="p-2 flex flex-col overflow-hidden sm:w-1/2 lg:w-1/3 xl:w-1/4 mb-6 text-copy justify-between items-end">
+    <div className="border-b-4 border-primary sm:border-none">
       <Link href={url}>
-        <a target="_blank">
+        <a target="_blank" className="block overflow-hidden">
           <img
-            className="hover:scale-125"
+            className="transform transition duration-50 hover:scale-110 hover:opacity-50"
             src={image}
             alt={altText}
             style={{ height: '300px', objectFit: 'cover', width: '100%' }}
           />
         </a>
       </Link>
-      <div className="p-2 h-24">
-        <p className="font-bold">{title}</p>
+      <div className="py-2 h-24">
+        <p className="font-bold text-lg">{title}</p>
         <p>{description}</p>
       </div>
     </div>

@@ -121,7 +121,7 @@ export default function Home() {
       <main className="relative">
         {/* <BackToTop /> */}
         <Section backgroundType={BackgroundType.Primary}>
-          {/* <div className="flex flex-col md:flex-row md:mb-6">
+          <div className="flex flex-col md:flex-row md:mb-6">
             <img
               width="250px"
               className="rounded-full h-full self-center md:mr-6"
@@ -129,14 +129,14 @@ export default function Home() {
               alt="Emmanuel Meinike - Dithered"
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
-              <p>Hi, I&apos;m Emmanuel 👋,</p>
+              <p>Hi, I&apos;m Ema 👋,</p>
               <p>web developer and creative coder.</p>
             </h1>
-          </div> */}
-          <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
+          </div>
+          {/* <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
             <p>Hi, I&apos;m Emmanuel 👋,</p>
             <p>web developer and creative coder.</p>
-          </h1>
+          </h1> */}
           <div className="w-full h-2 bg-white mb-8 max-w-xl"></div>
           <p className="mb-4 text-xl text-white">
             I like building things big and small. Currently I focus on using web

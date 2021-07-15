@@ -125,7 +125,7 @@ export default function Home() {
             <img
               width="250px"
               className="rounded-full h-full self-center md:mr-6"
-              src="/images/me-dither-3.png"
+              src="/images/me.png"
               alt="Emmanuel Meinike - Dithered"
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">

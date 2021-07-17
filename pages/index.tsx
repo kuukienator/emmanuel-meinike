@@ -159,7 +159,7 @@ export default function Home() {
               className="rounded-full h-full self-center md:mr-6"
               src="/images/me-500.jpg"
               srcSet="/images/me-250.jpg, /images/me-500.jpg 2x"
-              alt="Emmanuel Meinike - Dithered"
+              alt="Emmanuel Meinike - Headshot"
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
               <p>Hi, I&apos;m Ema 👋,</p>

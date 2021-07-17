@@ -40,8 +40,9 @@ export const ImageLink: FC<Props> = ({
             className="transform transition duration-50 hover:scale-110 hover:opacity-50"
             src={image}
             srcSet={createSrcSet(images)}
-            sizes="(min-width: 640px) 50vw, (min-width: 1024px) 33vw,(min-width: 1280px) 25vw, 100vw"
+            sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
             alt={altText}
+            loading="lazy"
             style={{ height: '300px', objectFit: 'cover', width: '100%' }}
           />
         </a>

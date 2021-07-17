@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { FC } from 'react';
 // import BackToTop from '../components/BackToTop';
 import ImageLink from '../components/ImageLink';
 import Link, { LinkElement } from '../components/Link';
@@ -13,6 +13,11 @@ type ImageLinkType = {
   title: string;
   description: string;
   url: string;
+};
+
+type ExternalLinkProps = {
+  name: string;
+  links: Array<LinkElement>;
 };
 
 const IMAGE_LINKS: Array<ImageLinkType> = [
@@ -79,11 +84,6 @@ const CONTACT: Array<LinkElement> = [
   },
 ];
 
-const COMPACT_CONTACTS = ['Twitter', 'E-mail'];
-const CONTACT_COMPACT = CONTACT.filter((c) =>
-  COMPACT_CONTACTS.includes(c.label)
-);
-
 const CODE: Array<LinkElement> = [
   {
     label: 'GitHub',
@@ -95,6 +95,11 @@ const CODE: Array<LinkElement> = [
   },
 ];
 
+const ExternalLink: FC<ExternalLinkProps> = ({ name, links }) => {
+  const link = links.find((l) => l.label === name);
+  return <Link url={link?.url || ''} label={link?.label || ''} />;
+};
+
 export default function Home() {
   return (
     <>
@@ -105,14 +110,14 @@ export default function Home() {
       </Head>
 
       <main className="relative">
-        {/* <BackToTop /> */}
         <Section backgroundType={BackgroundType.Primary}>
           <div className="flex flex-col md:flex-row md:mb-6">
             <img
               width="250px"
               height="250px"
               className="rounded-full h-full self-center md:mr-6"
-              src="/images/me-250.jpg"
+              src="/images/me-500.jpg"
+              srcSet="/images/me-250.jpg 250w, /images/me-500.jpg 500w"
               alt="Emmanuel Meinike - Dithered"
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
@@ -131,17 +136,9 @@ export default function Home() {
             creatively.
           </p>
           <p className="mb-4 text-xl text-white">
-            You can hit me up on{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'Twitter')?.url || ''}
-              label="Twitter"
-            />{' '}
-            or send me an{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'E-mail')?.url || ''}
-              label="E-mail"
-            />{' '}
-            if you have any questions.
+            You can hit me up on <ExternalLink links={CONTACT} name="Twitter" />{' '}
+            or send me an <ExternalLink links={CONTACT} name="E-mail" /> if you
+            have any questions.
           </p>
         </Section>
         <Section>
@@ -190,42 +187,19 @@ export default function Home() {
           <SectionHeader leftContent="#">Wanna see some code?</SectionHeader>
           <p className="mb-2">
             You can find my bigger projects and apps on{' '}
-            <Link
-              url={CODE.find((e) => e.label === 'Github')?.url || ''}
-              label="Github"
-            />
-            . For smaller sketches and ideas, checkout my{' '}
-            <Link
-              url={CODE.find((e) => e.label === 'Codepen')?.url || ''}
-              label="Codepen"
-            />
-            .
+            <ExternalLink links={CODE} name="GitHub" />. For smaller sketches
+            and ideas, checkout my <ExternalLink links={CODE} name="Codepen" />.
           </p>
         </Section>
         <Section>
           <SectionHeader leftContent="#">Wanna talk and connect?</SectionHeader>
           <p className="mb-2">
-            We can connect on{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'Twitter')?.url || ''}
-              label="Twitter"
-            />{' '}
-            or you can reach out with{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'E-mail')?.url || ''}
-              label="E-mail"
-            />
-            . I you want to see a more formal overview, head on over to{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'LinkedIn')?.url || ''}
-              label="LinkedIn"
-            />{' '}
-            or{' '}
-            <Link
-              url={CONTACT.find((e) => e.label === 'Xing')?.url || ''}
-              label="Xing"
-            />
-            .
+            We can connect on
+            <ExternalLink links={CONTACT} name="Twitter" /> or you can reach out
+            with <ExternalLink links={CONTACT} name="E-mail" />. I you want to
+            see a more formal overview, head on over to{' '}
+            <ExternalLink links={CONTACT} name="LinkedIn" /> or{' '}
+            <ExternalLink links={CONTACT} name="Xing" />.
           </p>
         </Section>
         <Section backgroundType={BackgroundType.Primary}>

@@ -1,30 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab:wght@400;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Lora:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Montserrat:wght@400;700&family=Rubik:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  
-  font-family: 'Open Sans', sans-serif;
-  
-
-  /*
-  background: rgb(238,174,202);
-  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-
-  background: rgb(238,174,202);
-  background: linear-gradient(90deg, #ff4d5a 0%, #213145 100%);
-  */
-
-  /* background: #ff9f1c; */
-  /* background: #ff5400; */
-  /* background: #f26419; */
-  /* background: #f3722c; */
-  /* #F58634 */
-
 }
 
 a {

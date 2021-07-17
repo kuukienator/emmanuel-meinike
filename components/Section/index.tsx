@@ -10,8 +10,10 @@ type Props = {
 };
 
 const Section: FC<Props> = ({ children, backgroundColor, backgroundType }) => {
-  const classes = `p-4 md:px-10 text-lg md:text-xl xl:px-24 ${
-    backgroundType === BackgroundType.Primary ? 'bg-primary text-copy' : ''
+  const classes = `p-4 md:px-10 text-lg md:text-xl xl:px-24 border-black ${
+    backgroundType === BackgroundType.Primary
+      ? 'bg-primary text-copy border-white'
+      : ''
   }`;
   return <section className={classes}>{children}</section>;
 };

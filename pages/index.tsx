@@ -1,18 +1,11 @@
 import Head from 'next/head';
 import React from 'react';
-import BackToTop from '../components/BackToTop';
+// import BackToTop from '../components/BackToTop';
 import ImageLink from '../components/ImageLink';
 import Link, { LinkElement } from '../components/Link';
-import LinkList from '../components/LinkList';
+// import LinkList from '../components/LinkList';
 import Section, { BackgroundType } from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
-
-/*
-#ff4d5a, #213145
-
-#f7ceda, #0233cb
-
-*/
 
 type ImageLinkType = {
   image: string;
@@ -58,13 +51,6 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     description: 'Create some random sunny-side up eggs. Delecious.',
     url: 'https://codepen.io/kuukienator/full/mdrQeOm',
   },
-  // {
-  //   image: '/images/2021.00001.01.jpg',
-  //   altText: 'Some circles screenshot - 1',
-  //   title: 'Some circles',
-  //   description: 'Just some circles',
-  //   url: 'https://codepen.io/kuukienator/full/PoWyQKM',
-  // },
   {
     image: '/images/exploring-dithering-1.jpg',
     altText: 'Exploring Dithering screenshot - 1',
@@ -113,7 +99,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Emmanuel Meinike - landing page</title>
+        <title>Ema (Emmanuel Meinike) - landing page</title>
         <meta name="description" content="Emmanuel Meinike landing page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -124,8 +110,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:mb-6">
             <img
               width="250px"
+              height="250px"
               className="rounded-full h-full self-center md:mr-6"
-              src="/images/me.png"
+              src="/images/me-250.jpg"
               alt="Emmanuel Meinike - Dithered"
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
@@ -156,8 +143,6 @@ export default function Home() {
             />{' '}
             if you have any questions.
           </p>
-
-          {/* <LinkList links={CONTACT_COMPACT} /> */}
         </Section>
         <Section>
           <SectionHeader leftContent="#">

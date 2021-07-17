@@ -6,7 +6,6 @@ type Props = {
 
 const SectionHeader: FC<Props> = ({ children, leftContent }) => (
   <h2 className="font-serif text-3xl text-primary text-left mt-8 mb-8 font-bold py-3 relative rounded-xl md:text-5xl">
-    {/* <div className="w-full h-full block absolute -z-10 bg-secondary rounded-xl"></div> */}
     <div className="flex">
       {leftContent && <span className="mr-3 text-primary">{leftContent}</span>}
       {children}

@@ -27,6 +27,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/color-palette-generator-desktop-1-300x.jpg', w: 300 },
       { url: '/images/color-palette-generator-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/color-palette-generator-desktop-1-900x.jpg', w: 900 },
       { url: '/images/color-palette-generator-desktop-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Color palette generator screenshot - 1',
@@ -39,6 +40,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/give-me-amos-desktop-1-300x.jpg', w: 300 },
       { url: '/images/give-me-amos-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/give-me-amos-desktop-1-900x.jpg', w: 900 },
       { url: '/images/give-me-amos-desktop-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Give me Amos screenshot - 1',
@@ -51,6 +53,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/where-to-go-desktop-1-300x.jpg', w: 300 },
       { url: '/images/where-to-go-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/where-to-go-desktop-1-900x.jpg', w: 900 },
       { url: '/images/where-to-go-desktop-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Where to go screenshot - 1',
@@ -63,6 +66,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/saul-bassified-desktop-1-300x.jpg', w: 300 },
       { url: '/images/saul-bassified-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/saul-bassified-desktop-1-900x.jpg', w: 900 },
       { url: '/images/saul-bassified-desktop-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Saul bassified screenshot - 1',
@@ -75,6 +79,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/generative-eggs-desktop-1-300x.jpg', w: 300 },
       { url: '/images/generative-eggs-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/generative-eggs-desktop-1-900x.jpg', w: 900 },
       { url: '/images/generative-eggs-desktop-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Generative eggs screenshot - 1',
@@ -87,6 +92,7 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     images: [
       { url: '/images/exploring-dithering-1-300x.jpg', w: 300 },
       { url: '/images/exploring-dithering-1-600x.jpg', w: 600 },
+      { url: '/images/exploring-dithering-1-900x.jpg', w: 900 },
       { url: '/images/exploring-dithering-1-1200x.jpg', w: 1200 },
     ],
     altText: 'Exploring Dithering screenshot - 1',

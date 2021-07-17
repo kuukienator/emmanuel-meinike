@@ -9,6 +9,7 @@ import SectionHeader from '../components/SectionHeader';
 
 type ImageLinkType = {
   image: string;
+  images: Array<{ url: string; w: number }>;
   altText: string;
   title: string;
   description: string;
@@ -23,6 +24,11 @@ type ExternalLinkProps = {
 const IMAGE_LINKS: Array<ImageLinkType> = [
   {
     image: '/images/color-palette-generator-desktop-1.jpg',
+    images: [
+      { url: '/images/color-palette-generator-desktop-1-300x.jpg', w: 300 },
+      { url: '/images/color-palette-generator-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/color-palette-generator-desktop-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Color palette generator screenshot - 1',
     title: 'Color palette Generator',
     description: 'An app to create color palettes from images.',
@@ -30,6 +36,11 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
   {
     image: '/images/give-me-amos-desktop-1.jpg',
+    images: [
+      { url: '/images/give-me-amos-desktop-1-300x.jpg', w: 300 },
+      { url: '/images/give-me-amos-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/give-me-amos-desktop-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Give me Amos screenshot - 1',
     title: 'Give me Amos!',
     description: 'Get the best Amos GIFs around.',
@@ -37,6 +48,11 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
   {
     image: '/images/where-to-go-desktop-1.jpg',
+    images: [
+      { url: '/images/where-to-go-desktop-1-300x.jpg', w: 300 },
+      { url: '/images/where-to-go-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/where-to-go-desktop-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Where to go screenshot - 1',
     title: 'Where to go?',
     description: 'Find awesome places around you for food and drinks.',
@@ -44,6 +60,11 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
   {
     image: '/images/saul-bassified-desktop-1.jpg',
+    images: [
+      { url: '/images/saul-bassified-desktop-1-300x.jpg', w: 300 },
+      { url: '/images/saul-bassified-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/saul-bassified-desktop-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Saul bassified screenshot - 1',
     title: 'Saul bassified',
     description: 'Create posters inspired by the great Saul Bass.',
@@ -51,6 +72,11 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
   {
     image: '/images/generative-eggs-desktop-1.jpg',
+    images: [
+      { url: '/images/generative-eggs-desktop-1-300x.jpg', w: 300 },
+      { url: '/images/generative-eggs-desktop-1-600x.jpg', w: 600 },
+      { url: '/images/generative-eggs-desktop-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Generative eggs screenshot - 1',
     title: 'Generative Eggs',
     description: 'Create some random sunny-side up eggs. Delecious.',
@@ -58,6 +84,11 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
   {
     image: '/images/exploring-dithering-1.jpg',
+    images: [
+      { url: '/images/exploring-dithering-1-300x.jpg', w: 300 },
+      { url: '/images/exploring-dithering-1-600x.jpg', w: 600 },
+      { url: '/images/exploring-dithering-1-1200x.jpg', w: 1200 },
+    ],
     altText: 'Exploring Dithering screenshot - 1',
     title: 'Exploring Dithering',
     description: 'Playing around with dithering for images',
@@ -100,6 +131,10 @@ const ExternalLink: FC<ExternalLinkProps> = ({ name, links }) => {
   return <Link url={link?.url || ''} label={link?.label || ''} />;
 };
 
+/*
+600
+300
+*/
 export default function Home() {
   return (
     <>
@@ -152,6 +187,7 @@ export default function Home() {
                 altText={i.altText}
                 description={i.description}
                 image={i.image}
+                images={i.images}
                 title={i.title}
                 url={i.url}
               />

@@ -3,9 +3,9 @@ import React, { FC } from 'react';
 // import BackToTop from '../components/BackToTop';
 import ImageLink from '../components/ImageLink';
 import Link, { LinkElement } from '../components/Link';
-// import LinkList from '../components/LinkList';
 import Section, { BackgroundType } from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
+import { CODE, CONTACT } from '../data';
 
 type ImageLinkType = {
   image: string;
@@ -102,36 +102,6 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
   },
 ];
 
-const CONTACT: Array<LinkElement> = [
-  {
-    label: 'Xing',
-    url: 'https://www.xing.com/profile/Emmanuel_Meinike/cv',
-  },
-  {
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/emmanuel-meinike-11185541',
-  },
-  {
-    label: 'E-mail',
-    url: 'mailto:emmanuel.meinike@gmail.com',
-  },
-  {
-    label: 'Twitter',
-    url: 'https://twitter.com/kuukienator',
-  },
-];
-
-const CODE: Array<LinkElement> = [
-  {
-    label: 'GitHub',
-    url: 'https://github.com/kuukienator',
-  },
-  {
-    label: 'Codepen',
-    url: 'https://codepen.io/kuukienator',
-  },
-];
-
 const ExternalLink: FC<ExternalLinkProps> = ({ name, links }) => {
   const link = links.find((l) => l.label === name);
   return <Link url={link?.url || ''} label={link?.label || ''} />;
@@ -150,7 +120,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="relative">
+      <main className="relative text-copy">
         <Section backgroundType={BackgroundType.Primary}>
           <div className="flex flex-col md:flex-row md:mb-6">
             <img
@@ -161,22 +131,22 @@ export default function Home() {
               srcSet="/images/me-250.jpg, /images/me-500.jpg 2x"
               alt="Emmanuel Meinike - Headshot"
             />
-            <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
+            <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-highlight lg:text-7xl">
               <p>Hi, I&apos;m Ema 👋,</p>
               <p>web developer and creative coder.</p>
             </h1>
           </div>
-          {/* <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-white lg:text-7xl">
+          {/* <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-highlight lg:text-7xl">
             <p>Hi, I&apos;m Emmanuel 👋,</p>
             <p>web developer and creative coder.</p>
           </h1> */}
-          <div className="w-full h-2 bg-white mb-8 max-w-xl"></div>
-          <p className="mb-4 text-xl text-white">
+          <div className="w-full h-2 bg-highlight mb-8 max-w-xl"></div>
+          <p className="mb-4 text-xl text-highlight max-w-xl">
             I like building things big and small. Currently I focus on using web
             technologies to build awesome user experiences and express myself
             creatively.
           </p>
-          <p className="mb-4 text-xl text-white">
+          <p className="mb-4 text-xl text-highlight max-w-xl">
             You can hit me up on <ExternalLink links={CONTACT} name="Twitter" />{' '}
             or send me an <ExternalLink links={CONTACT} name="E-mail" /> if you
             have any questions.
@@ -220,7 +190,7 @@ export default function Home() {
           </p>
         </Section>
         <Section backgroundType={BackgroundType.Primary}>
-          <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-white">
+          <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-highlight">
             <span>Hold on there! Hope you are having an awesome day 😎✌.</span>
             <span>Scroll on!</span>
           </p>
@@ -245,7 +215,7 @@ export default function Home() {
           </p>
         </Section>
         <Section backgroundType={BackgroundType.Primary}>
-          <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-white">
+          <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-highlight">
             <span>Thanks for stopping by 👋.</span>
             <span>See you later.</span>
           </p>

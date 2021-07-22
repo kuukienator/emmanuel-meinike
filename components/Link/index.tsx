@@ -8,7 +8,7 @@ export type LinkElement = {
 
 const Link: FC<LinkElement> = ({ label, url, blank }) => (
   <a
-    className="px-1 border-b-2 font-bold hover:text-white hover:bg-black border-current"
+    className="px-1 border-b-2 font-bold hover:text-highlight hover:bg-copy border-current"
     target={blank ? '_blank' : '_self'}
     rel="noopener noreferrer"
     href={url}

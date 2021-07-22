@@ -8,19 +8,23 @@ const HEADER_LINKS = [
     label: 'Home.',
   },
   {
-    path: '/projects',
-    label: 'Projects.',
+    path: '/links',
+    label: 'Links.',
   },
-  {
-    path: '/blog',
-    label: 'Blog.',
-  },
+  // {
+  //   path: '/projects',
+  //   label: 'Projects.',
+  // },
+  // {
+  //   path: '/blog',
+  //   label: 'Blog.',
+  // },
 ];
 
 const Header = () => {
   const router = useRouter();
   return (
-    <header className="font-light flex flex-row-reverse font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-white xl:px-24">
+    <header className="font-light flex flex-row-reverse font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-highlight xl:px-24">
       <nav>
         <ul className="flex">
           {HEADER_LINKS.map((l) => {

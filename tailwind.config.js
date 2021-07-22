@@ -4,14 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // primary: '#01937C',
-        primary: '#f26419',
-        // primary: '#243f93',
-        // primary: '#b11f24',
-        // secondary: '#f3896f',
-        // secondary: '#383E56',
-        // secondary: '#00b4b1',
-        secondary: 'black',
+        // primary: '#f26419',
+        primary: 'rgb(211, 118, 98)',
+        // primary: 'rgb(36, 65, 63)',
+        highlight: 'white',
         copy: 'black',
       },
       zIndex: {

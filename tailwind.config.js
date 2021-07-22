@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       colors: {
         // primary: '#f26419',
-        primary: 'rgb(211, 118, 98)',
-        // primary: 'rgb(36, 65, 63)',
-        highlight: 'white',
+        // primary: 'rgb(211, 118, 98)',
+        primary: 'rgb(36, 65, 63)',
+        // highlight: 'white',
+        highlight: 'rgb(238, 235, 232)',
         copy: 'black',
       },
       zIndex: {

@@ -1,9 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 
 const colorSchemes = [
-  { name: 'Scheme 1', class: 'color-scheme-1', color: 'rgb(211, 118, 98)' },
-  { name: 'Scheme 2', class: 'color-scheme-2', color: 'rgb(36, 65, 63)' },
-  { name: 'Scheme 3', class: 'color-scheme-3', color: '#f26419' },
+  // { name: 'Scheme 3', class: 'color-scheme-3', color: '#f26419' },
+  { name: 'Scheme 1', class: 'color-scheme-2', color: 'rgb(36, 65, 63)' },
+  { name: 'Scheme 2', class: 'color-scheme-1', color: 'rgb(211, 118, 98)' },
+  { name: 'Scheme 2', class: 'color-scheme-4', color: '#4c3a4f' },
+  // { name: 'Scheme 4', class: 'color-scheme-5', color: '#f8c973' },
 ];
 
 const ColorSchemeToggle: FC = () => {

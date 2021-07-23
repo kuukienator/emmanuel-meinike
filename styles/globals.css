@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap');
 
 :root {
-  --primary: rgb(211, 118, 98);
+  --primary: rgb(36, 65, 63);
 }
 
 .color-scheme-1 {
@@ -14,6 +14,14 @@
 
 .color-scheme-3 {
   --primary: #f26419;;
+}
+
+.color-scheme-4 {
+  --primary: #4c3a4f;
+}
+
+.color-scheme-5 {
+  --primary: #f8c973;
 }
 
 html,

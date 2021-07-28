@@ -16,6 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta name="theme-color" content="rgb(36, 65, 63)" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

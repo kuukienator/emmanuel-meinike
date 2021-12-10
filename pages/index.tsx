@@ -133,7 +133,9 @@ export default function Home() {
               style={{ backgroundImage: 'url(/images/me-100-dither.jpg)' }}
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-highlight lg:text-7xl">
-              <p>Hi, I&apos;m Ema 👋,</p>
+              <p>
+                Hi, I&apos;m Ema <span className="font-normal">👋</span>,
+              </p>
               <p>web developer and creative coder.</p>
             </h1>
           </div>
@@ -192,7 +194,10 @@ export default function Home() {
         </Section>
         <Section backgroundType={BackgroundType.Primary}>
           <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-highlight">
-            <span>Hold on there! Hope you are having an awesome day 😎✌.</span>
+            <span>
+              Hold on there! Hope you are having an awesome day{' '}
+              <span className="font-normal">😎✌</span>.
+            </span>
             <span>Scroll on!</span>
           </p>
         </Section>
@@ -217,7 +222,9 @@ export default function Home() {
         </Section>
         <Section backgroundType={BackgroundType.Primary}>
           <p className="font-serif flex flex-col my-10 text-2xl text-center font-bold text-highlight">
-            <span>Thanks for stopping by 👋.</span>
+            <span>
+              Thanks for stopping by <span className="font-normal">👋</span>.
+            </span>
             <span>See you later.</span>
           </p>
         </Section>

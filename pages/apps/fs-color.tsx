@@ -42,6 +42,12 @@ const FSColor = () => {
     } catch (e) {}
   }, [currentInput]);
 
+  const setRandomColor = () => {
+    const color = Color.random();
+    setColor(color);
+    setCurrentInput(color.toHex());
+  };
+
   return (
     <div
       className="w-screen h-screen flex justify-center items-center flex-col text-2xl"
@@ -58,9 +64,7 @@ const FSColor = () => {
         }
 
         if (e.key === 'r') {
-          const color = Color.random();
-          setColor(color);
-          setCurrentInput(color.toHex());
+          setRandomColor();
         }
         if (e.key === 'f') {
           toggleFullscreen();
@@ -109,15 +113,56 @@ const FSColor = () => {
           </label>
         </div>
 
-        <p>
-          Press <span className="font-bold">R</span> for random.
-        </p>
-        <p>
-          Press <span className="font-bold">F</span> for fullscreen.
-        </p>
-        <p>
-          Press <span className="font-bold">H</span> to hide UI.
-        </p>
+        <div className="space-y-5 flex flex-col justify-center">
+          <p>
+            Press{' '}
+            <button
+              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              onClick={() => setRandomColor()}
+              style={{
+                color: color.toHSLA(),
+                backgroundColor: color.isDark()
+                  ? color.lighten(15).toHSLA()
+                  : color.darken(15).toHSLA(),
+              }}
+            >
+              R
+            </button>{' '}
+            for random.
+          </p>
+          <p>
+            Press{' '}
+            <button
+              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              onClick={() => toggleFullscreen()}
+              style={{
+                color: color.toHSLA(),
+                backgroundColor: color.isDark()
+                  ? color.lighten(15).toHSLA()
+                  : color.darken(15).toHSLA(),
+              }}
+            >
+              F
+            </button>{' '}
+            for fullscreen.
+          </p>
+          <p>
+            Press{' '}
+            <button
+              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              onClick={() => setIsUIHidden(!isUIHidden)}
+              style={{
+                color: color.toHSLA(),
+                backgroundColor: color.isDark()
+                  ? color.lighten(15).toHSLA()
+                  : color.darken(15).toHSLA(),
+              }}
+            >
+              H
+            </button>{' '}
+            to hide UI.
+          </p>
+        </div>
       </div>
 
       <footer

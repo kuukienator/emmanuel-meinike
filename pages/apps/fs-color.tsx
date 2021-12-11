@@ -81,7 +81,7 @@ const FSColor = () => {
         })}
       >
         <div
-          className="flex flex-row justify-center items-center mb-8 border-8 rounded-2xl p-4"
+          className="flex flex-row justify-center items-center mb-8 border-8 rounded-2xl p-2 md:p-4"
           style={{
             borderColor: color.isDark()
               ? color.lighten(15).toHSLA()
@@ -89,14 +89,14 @@ const FSColor = () => {
           }}
         >
           <input
-            className="text-3xl w-56 md:text-6xl md:w-96 text-center font-bold bg-inherit"
+            className="text-4xl w-56 md:text-6xl md:w-96 text-center font-bold bg-inherit"
             onFocus={() => toggleIsInputFocused(true)}
             onBlur={() => toggleIsInputFocused(false)}
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
           />
           <label className="cursor-pointer">
-            <ColorPickerIcon className="text-3xl md:text-6xl" />
+            <ColorPickerIcon className="text-4xl md:text-6xl" />
             <input
               type="color"
               onChange={(e) => {

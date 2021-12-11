@@ -76,7 +76,7 @@ const FSColor = () => {
       }}
     >
       <div
-        className={clsx('flex flex-col justify-center items-center', {
+        className={clsx('flex flex-col justify-center items-center h-full', {
           hidden: isUIHidden,
         })}
       >
@@ -119,12 +119,38 @@ const FSColor = () => {
           Press <span className="font-bold">H</span> to hide UI.
         </p>
       </div>
+
+      <footer
+        className={clsx('font-bold text-base flex space-x-2 py-2', {
+          hidden: isUIHidden,
+        })}
+      >
+        <a
+          href="https://twitter.com/kuukienator"
+          referrerPolicy="no-referrer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @kuukienator
+        </a>
+        <span>|</span>
+        <a
+          href="https://www.ema.codes/"
+          referrerPolicy="no-referrer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          ema.codes
+        </a>
+        <span>|</span>
+        <span>2021</span>
+      </footer>
     </div>
   );
 };
 
 FSColor.getLayout = function getLayout(page: ReactElement) {
-  return <div>{page}</div>;
+  return <>{page}</>;
 };
 
 export default FSColor;

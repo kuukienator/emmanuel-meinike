@@ -89,14 +89,14 @@ const FSColor = () => {
           }}
         >
           <input
-            className="text-6xl w-96 text-center font-bold bg-inherit"
+            className="text-3xl w-56 md:text-6xl md:w-96 text-center font-bold bg-inherit"
             onFocus={() => toggleIsInputFocused(true)}
             onBlur={() => toggleIsInputFocused(false)}
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
           />
           <label className="cursor-pointer">
-            <ColorPickerIcon className="text-6xl" />
+            <ColorPickerIcon className="text-3xl md:text-6xl" />
             <input
               type="color"
               onChange={(e) => {

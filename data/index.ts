@@ -29,3 +29,14 @@ export const CODE: Array<LinkElement> = [
     url: 'https://codepen.io/kuukienator',
   },
 ];
+
+export const APPS: Array<LinkElement> = [
+  {
+    label: 'FS Color',
+    url: '/apps/fs-color',
+  },
+  {
+    label: 'Aspect ratio calculator',
+    url: 'https://kuukienator.github.io/aspect-ratio-calculator/',
+  },
+];

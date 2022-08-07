@@ -11,6 +11,10 @@ const HEADER_LINKS = [
     path: '/links',
     label: 'Links.',
   },
+  {
+    path: '/apps',
+    label: 'Apps.',
+  },
   // {
   //   path: '/projects',
   //   label: 'Projects.',

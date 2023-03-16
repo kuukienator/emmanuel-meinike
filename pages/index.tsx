@@ -36,6 +36,19 @@ const IMAGE_LINKS: Array<ImageLinkType> = [
     url: 'https://kuukienator.github.io/color-palette-generator/',
   },
   {
+    image: '/images/aspect-ratio-calculator-desktop-1.png',
+    images: [
+      { url: '/images/aspect-ratio-calculator-desktop-1-300x.png', w: 300 },
+      { url: '/images/aspect-ratio-calculator-desktop-1-600x.png', w: 600 },
+      { url: '/images/aspect-ratio-calculator-desktop-1-900x.png', w: 900 },
+      { url: '/images/aspect-ratio-calculator-desktop-1-1200x.png', w: 1200 },
+    ],
+    altText: 'Aspect Ratio Calculator screenshot - 1',
+    title: 'Aspect Ratio Calculator',
+    description: 'An app to calculate aspect ratios.',
+    url: 'https://kuukienator.github.io/aspect-ratio-calculator/',
+  },
+  {
     image: '/images/give-me-amos-desktop-1.jpg',
     images: [
       { url: '/images/give-me-amos-desktop-1-300x.jpg', w: 300 },

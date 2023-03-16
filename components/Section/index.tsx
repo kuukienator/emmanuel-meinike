@@ -7,6 +7,7 @@ export enum BackgroundType {
 type Props = {
   backgroundColor?: string;
   backgroundType?: BackgroundType;
+  children?: React.ReactNode;
 };
 
 const Section: FC<Props> = ({ children, backgroundColor, backgroundType }) => {

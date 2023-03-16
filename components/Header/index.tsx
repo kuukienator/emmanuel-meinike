@@ -41,9 +41,7 @@ const Header = () => {
               : 'p-1 px-1 mx-1';
             return (
               <li className={classes} key={l.label + l.path}>
-                <Link href={l.path}>
-                  <a>{l.label}</a>
-                </Link>
+                <Link href={l.path}>{l.label}</Link>
               </li>
             );
           })}

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 type Props = {
   leftContent?: string;
+  children?: React.ReactNode;
 };
 
 const SectionHeader: FC<Props> = ({ children, leftContent }) => (

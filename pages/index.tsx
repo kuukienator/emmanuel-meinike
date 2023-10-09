@@ -131,6 +131,10 @@ export default function Home() {
         <title>Ema (Emmanuel Meinike) - landing page</title>
         <meta name="description" content="Emmanuel Meinike landing page" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
+        <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net" />
       </Head>
 
       <main className="relative text-copy">
@@ -146,8 +150,20 @@ export default function Home() {
               style={{ backgroundImage: 'url(/images/me-100-dither.jpg)' }}
             />
             <h1 className="font-serif text-4xl text-left my-8 font-bold sm:text-6xl text-highlight lg:text-7xl">
-              <p>
-                Hi, I&apos;m Ema <span className="font-normal">👋</span>,
+              <p className="flex">
+                Hi, I&apos;m Ema{' '}
+                <picture>
+                  <source
+                    srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    className="w-9 h-9 sm:w-16 sm:h-16 mx-2"
+                    src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+                    alt="👋"
+                  />
+                </picture>
+                ,
               </p>
               <p>web developer and creative coder.</p>
             </h1>

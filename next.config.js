@@ -1,4 +1,5 @@
 module.exports = {
+  output: 'export',
   swcMinify: true,
   reactStrictMode: true,
   webpack(config) {

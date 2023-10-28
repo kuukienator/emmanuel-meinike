@@ -2,6 +2,12 @@ import React, { FC } from 'react';
 import Head from 'next/head';
 import Link from '../components/Link';
 import ErrorContainer from '../components/ErrorContainer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ema (Emmanuel Meinike) - 404',
+  description: 'Emmanuel Meinike 404',
+};
 
 const GIFS = [
   'https://media.giphy.com/media/VhzOTQPuNZwM0xMIOn/giphy.gif',
@@ -12,25 +18,18 @@ const GIFS = [
   'https://media.giphy.com/media/1zKf0WqsXFhssE2c7e/giphy.gif',
 ];
 
-const Custom404: FC = () => {
+const NotFound: FC = () => {
   return (
-    <>
-      <Head>
-        <title>Ema (Emmanuel Meinike) - 404</title>
-        <meta name="description" content="Emmanuel Meinike 404" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <ErrorContainer
-        gifs={GIFS}
-        label="404"
-        message={
-          <>
-            You look lost, maybe you should go <Link url="/" label="Home" />.
-          </>
-        }
-      />
-    </>
+    <ErrorContainer
+      gifs={GIFS}
+      label="404"
+      message={
+        <>
+          You look lost, maybe you should go <Link url="/" label="Home" />.
+        </>
+      }
+    />
   );
 };
 
-export default Custom404;
+export default NotFound;

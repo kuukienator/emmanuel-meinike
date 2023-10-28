@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const HEADER_LINKS = [
   {
@@ -26,13 +28,13 @@ const HEADER_LINKS = [
 ];
 
 const Header = () => {
-  const router = useRouter();
+  const pathname = usePathname();
   return (
     <header className="font-light flex flex-row-reverse font-serif justify-between px-4 pt-2 pb-2 md:px-10 text-lg flex-row items-center bg-primary text-highlight xl:px-24">
       <nav>
         <ul className="flex">
           {HEADER_LINKS.map((l) => {
-            const isActive = l.path === router.pathname;
+            const isActive = l.path === pathname;
             const styles = isActive
               ? { color: 'white', background: 'black' }
               : {};

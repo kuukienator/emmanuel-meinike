@@ -1,8 +1,10 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 
-import Color from '../../lib/color';
-import ColorPickerIcon from '../../assets/svgs/source_icons_color-picker.svg';
+import ColorPickerIcon from '../../../assets/svgs/source_icons_color-picker.svg';
+import Color from '../../../lib/color';
 
 const toggleFullscreen = () => {
   if (!document.fullscreenElement) {
@@ -14,7 +16,7 @@ const toggleFullscreen = () => {
   }
 };
 
-const FSColor = () => {
+const FSColorPage = () => {
   const [color, setColor] = useState<Color>(new Color(0, 0, 0));
   const [currentInput, setCurrentInput] = useState<string>(color.toHex());
   const [isInputFoccused, toggleIsInputFocused] = useState<boolean>(false);
@@ -194,8 +196,4 @@ const FSColor = () => {
   );
 };
 
-FSColor.getLayout = function getLayout(page: ReactElement) {
-  return <>{page}</>;
-};
-
-export default FSColor;
+export default FSColorPage;

@@ -1,6 +1,12 @@
-import React, { FC } from 'react';
+import { Metadata } from 'next';
+import React from 'react';
 
-const Blog: FC = () => (
+export const metadata: Metadata = {
+  title: 'Ema (Emmanuel Meinike) - blog',
+  description: 'Emmanuel Meinike blog',
+};
+
+const BlogPage = () => (
   <div>
     <main className="px-4 mt-8 md:px-10">
       <h1
@@ -14,4 +20,4 @@ const Blog: FC = () => (
   </div>
 );
 
-export default Blog;
+export default BlogPage;

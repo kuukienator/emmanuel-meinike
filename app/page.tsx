@@ -1,11 +1,15 @@
-import Head from 'next/head';
 import React, { FC } from 'react';
-// import BackToTop from '../components/BackToTop';
-import ImageLink from '../components/ImageLink';
-import Link, { LinkElement } from '../components/Link';
+import { Metadata } from 'next';
 import Section, { BackgroundType } from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
+import ImageLink from '../components/ImageLink';
+import Link, { LinkElement } from '../components/Link';
 import { CODE, CONTACT } from '../data';
+
+export const metadata: Metadata = {
+  title: 'Ema (Emmanuel Meinike) - landing page',
+  description: 'Emmanuel Meinike landing page',
+};
 
 type ImageLinkType = {
   image: string;
@@ -120,19 +124,9 @@ const ExternalLink: FC<ExternalLinkProps> = ({ name, links }) => {
   return <Link url={link?.url || ''} label={link?.label || ''} />;
 };
 
-/*
-600
-300
-*/
-export default function Home() {
+export default function Page() {
   return (
     <>
-      <Head>
-        <title>Ema (Emmanuel Meinike) - landing page</title>
-        <meta name="description" content="Emmanuel Meinike landing page" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="relative text-copy">
         <Section backgroundType={BackgroundType.Primary}>
           <div className="flex flex-col md:flex-row md:mb-6">

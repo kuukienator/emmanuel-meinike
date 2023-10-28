@@ -1,6 +1,12 @@
-import React, { FC } from 'react';
+import { Metadata } from 'next';
+import React from 'react';
 
-const Projects: FC = () => (
+export const metadata: Metadata = {
+  title: 'Ema (Emmanuel Meinike) - projects',
+  description: 'Emmanuel Meinike projects',
+};
+
+const ProjectsPage = () => (
   <div>
     <main className="px-4 mt-8 md:px-10">
       <h1
@@ -14,4 +20,4 @@ const Projects: FC = () => (
   </div>
 );
 
-export default Projects;
+export default ProjectsPage;

@@ -21,7 +21,7 @@ export default class Color {
   s: number;
   l: number;
 
-  constructor(r: number, g: number, b: number, a: number = 1) {
+  constructor(r: number, g: number, b: number, a = 1) {
     const hsla = Color.HSLAfromRGBA(r, g, b, a);
     this.r = r;
     this.g = g;
@@ -35,7 +35,7 @@ export default class Color {
 
   toHex(): string {
     return `#${this.r.toString(16)}${this.g.toString(16)}${this.b.toString(
-      16
+      16,
     )}`;
   }
 
@@ -64,18 +64,18 @@ export default class Color {
       this.h,
       this.s,
       Math.min(this.l + amount, 100),
-      this.a
+      this.a,
     );
   }
 
-  static RGBAfromHSLA(h: number, s: number, l: number, a: number = 1): RGBA {
+  static RGBAfromHSLA(h: number, s: number, l: number, a = 1): RGBA {
     const _s = s / 100;
     const _l = l / 100;
 
-    let c = (1 - Math.abs(2 * _l - 1)) * _s;
+    const c = (1 - Math.abs(2 * _l - 1)) * _s;
 
-    let x = c * (1 - Math.abs(((h / 60) % 2) - 1));
-    let m = _l - c / 2;
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+    const m = _l - c / 2;
     let r = 0;
     let g = 0;
     let b = 0;
@@ -112,14 +112,14 @@ export default class Color {
     return { r, g, b, a };
   }
 
-  static HSLAfromRGBA(r: number, g: number, b: number, a: number = 1): HSLA {
+  static HSLAfromRGBA(r: number, g: number, b: number, a = 1): HSLA {
     const _r = r / 255;
     const _g = g / 255;
     const _b = b / 255;
 
-    let cmin = Math.min(_r, _g, _b);
-    let cmax = Math.max(_r, _g, _b);
-    let delta = cmax - cmin;
+    const cmin = Math.min(_r, _g, _b);
+    const cmax = Math.max(_r, _g, _b);
+    const delta = cmax - cmin;
     let h = 0;
     let s = 0;
     let l = 0;
@@ -152,14 +152,14 @@ export default class Color {
   static fromHex(hex: string): Color {
     const hexNum = hex.replace('#', '');
     if (hexNum.length === 3) {
-      const r = parseInt(hexNum[0] + hexNum[0], 16);
-      const g = parseInt(hexNum[1] + hexNum[1], 16);
-      const b = parseInt(hexNum[2] + hexNum[2], 16);
+      const r = Number.parseInt(hexNum[0] + hexNum[0], 16);
+      const g = Number.parseInt(hexNum[1] + hexNum[1], 16);
+      const b = Number.parseInt(hexNum[2] + hexNum[2], 16);
       return new Color(r, g, b);
     } else if (hexNum.length === 6) {
-      const r = parseInt(hexNum[0] + hexNum[1], 16);
-      const g = parseInt(hexNum[2] + hexNum[3], 16);
-      const b = parseInt(hexNum[4] + hexNum[5], 16);
+      const r = Number.parseInt(hexNum[0] + hexNum[1], 16);
+      const g = Number.parseInt(hexNum[2] + hexNum[3], 16);
+      const b = Number.parseInt(hexNum[4] + hexNum[5], 16);
       return new Color(r, g, b);
     } else {
       throw new Error('Invalid hex color');
@@ -170,11 +170,11 @@ export default class Color {
     return new Color(r, g, b);
   }
 
-  static fromRGBA(r: number, g: number, b: number, a: number = 1): Color {
+  static fromRGBA(r: number, g: number, b: number, a = 1): Color {
     return new Color(r, g, b, a);
   }
 
-  static fromHSLA(h: number, s: number, l: number, a: number = 1): Color {
+  static fromHSLA(h: number, s: number, l: number, a = 1): Color {
     const rgb = Color.RGBAfromHSLA(h, s, l, a);
     return new Color(rgb.r, rgb.g, rgb.b, rgb.a);
   }

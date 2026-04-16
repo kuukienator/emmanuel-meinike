@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import type { Metadata } from 'next';
 import Head from 'next/head';
-import Link from '../components/Link';
+import React, { type FC } from 'react';
 import ErrorContainer from '../components/ErrorContainer';
-import { Metadata } from 'next';
+import Link from '../components/Link';
 
 export const metadata: Metadata = {
   title: 'Ema (Emmanuel Meinike) - 404',

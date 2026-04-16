@@ -1,4 +1,4 @@
-import { LinkElement } from '../components/Link';
+import type { LinkElement } from '../components/Link';
 
 export const CONTACT: Array<LinkElement> = [
   {

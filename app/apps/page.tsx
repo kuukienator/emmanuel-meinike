@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
 import React from 'react';
-import { LinkElement } from '../../components/Link';
+import type { LinkElement } from '../../components/Link';
 import { APPS } from '../../data';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Ema (Emmanuel Meinike) - apps',

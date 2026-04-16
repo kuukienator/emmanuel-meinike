@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import React, { type FC } from 'react';
+import ImageLink from '../components/ImageLink';
+import Link, { type LinkElement } from '../components/Link';
 import Section, { BackgroundType } from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
-import ImageLink from '../components/ImageLink';
-import Link, { LinkElement } from '../components/Link';
 import { CODE, CONTACT } from '../data';
 
 export const metadata: Metadata = {

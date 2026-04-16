@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import React, { type FC } from 'react';
 import CustomLink from '../Link';
-import React, { FC } from 'react';
 
 type ImageWithDimensions = {
   url: string;

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { type FC, useEffect, useState } from 'react';
 
 const colorSchemes = [
   // { name: 'Scheme 3', class: 'color-scheme-3', color: '#f26419' },

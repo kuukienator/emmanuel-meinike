@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import Link, { LinkElement } from '../Link';
+import React, { type FC } from 'react';
+import Link, { type LinkElement } from '../Link';
 
 type Props = {
   links: Array<LinkElement>;

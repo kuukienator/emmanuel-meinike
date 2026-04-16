@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
 
 import ColorPickerIcon from '../../../assets/svgs/source_icons_color-picker.svg';
 import Color from '../../../lib/color';

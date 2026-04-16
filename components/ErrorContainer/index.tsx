@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, ReactElement, useEffect, useState } from 'react';
+import React, { type FC, type ReactElement, useEffect, useState } from 'react';
 
 type Props = {
   gifs: Array<string>;

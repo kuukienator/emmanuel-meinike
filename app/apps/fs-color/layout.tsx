@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { Rubik, Zilla_Slab } from 'next/font/google';
 
 import '../../globals.css';
-import 'tailwindcss/tailwind.css';
 
 export default function RootLayout({
   // Layouts must accept a children prop.

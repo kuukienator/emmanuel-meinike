@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 import './globals.css';
-import 'tailwindcss/tailwind.css';
 
 const rubik = Rubik({
   subsets: ['latin'],

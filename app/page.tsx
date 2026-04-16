@@ -63,7 +63,7 @@ export default function Page() {
         <SectionHeader leftContent="#">
           Wanna see some cool things?
         </SectionHeader>
-        <div className="flex flex-col flex-wrap sm:flex-row items-center">
+        <div className="flex flex-col flex-wrap items-center sm:flex-row">
           {STUFF.filter((i) => i.highlight === true).map((i) => (
             <ImageLink
               key={i.image + i.altText}

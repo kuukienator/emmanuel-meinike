@@ -12,7 +12,7 @@ const ProjectsPage = () => (
   <div>
     <main className="mt-8 px-4 md:px-10">
       <SectionHeader leftContent="#">Here is more Stuff!</SectionHeader>
-      <div className="flex flex-col flex-wrap sm:flex-row items-center">
+      <div className="flex flex-col flex-wrap items-center sm:flex-row">
         {STUFF.map((i) => (
           <ImageLink
             key={i.image + i.altText}

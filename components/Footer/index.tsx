@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Footer = () => (
-  <footer className="text-center p-2 text-copy">
+  <footer className="p-2 text-center text-copy">
     Designed and coded by Emmanuel Meinike - 2023
   </footer>
 );

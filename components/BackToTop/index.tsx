@@ -1,8 +1,8 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 
 const BackToTop: FC = () => {
   return (
-    <div className="fixed bottom-4 right-4 rounded-full p-4 border-2 border-black z-10 bg-white">
+    <div className="fixed right-4 bottom-4 z-10 rounded-full border-2 border-black bg-white p-4">
       UP
     </div>
   );

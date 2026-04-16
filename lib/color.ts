@@ -124,11 +124,11 @@ export default class Color {
     let s = 0;
     let l = 0;
 
-    if (delta == 0) {
+    if (delta === 0) {
       h = 0;
-    } else if (cmax == _r) {
+    } else if (cmax === _r) {
       h = ((_g - _b) / delta) % 6;
-    } else if (cmax == _g) {
+    } else if (cmax === _g) {
       h = (_b - _r) / delta + 2;
     } else {
       h = (_r - _g) / delta + 4;
@@ -141,7 +141,7 @@ export default class Color {
 
     l = (cmax + cmin) / 2;
 
-    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+    s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
 
     s = +(s * 100).toFixed(1);
     l = +(l * 100).toFixed(1);

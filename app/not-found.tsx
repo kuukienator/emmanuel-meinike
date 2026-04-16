@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 import ErrorContainer from '../components/ErrorContainer';
 import Link from '../components/Link';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Color from '../../../lib/color';
 
@@ -14,6 +14,8 @@ const ColorPickerIcon = ({ className }: { className?: string }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
+    aria-label="Color picker"
+    role="img"
   >
     <path
       d="M7 13.161L12.4644 7.6966C12.8549 7.30607 13.4881 7.30607 13.8786 7.6966L15.9999 9.81792C16.3904 10.2084 16.3904 10.8416 15.9999 11.2321L14.0711 13.161M7 13.161L4.82764 15.3334C4.73428 15.4267 4.66034 15.5376 4.61007 15.6597L3.58204 18.1563C3.07438 19.3892 4.30728 20.6221 5.54018 20.1145L8.03681 19.0865C8.1589 19.0362 8.26981 18.9622 8.36317 18.8689L14.0711 13.161M7 13.161H14.0711"
@@ -65,7 +67,7 @@ const FSColorPage = () => {
     try {
       const color = Color.fromHex(currentInput);
       setColor(color);
-    } catch (e) {}
+    } catch (_e) {}
   }, [currentInput]);
 
   const setRandomColor = () => {
@@ -76,13 +78,15 @@ const FSColorPage = () => {
 
   return (
     <div
-      className="w-screen h-screen flex justify-center items-center flex-col text-2xl"
+      className="flex h-screen w-screen flex-col items-center justify-center text-2xl"
       style={{
         backgroundColor: color.toHSLA(),
         color: color.isDark()
           ? color.lighten(15).toHSLA()
           : color.darken(15).toHSLA(),
       }}
+      role="application"
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: role="application" requires tabIndex to receive keyboard focus
       tabIndex={0}
       onKeyDown={(e) => {
         if (isInputFoccused) {
@@ -106,12 +110,12 @@ const FSColorPage = () => {
       }}
     >
       <div
-        className={clsx('flex flex-col justify-center items-center h-full', {
+        className={clsx('flex h-full flex-col items-center justify-center', {
           hidden: isUIHidden,
         })}
       >
         <div
-          className="flex flex-row justify-center items-center mb-8 border-8 rounded-2xl p-2 md:p-4"
+          className="mb-8 flex flex-row items-center justify-center rounded-2xl border-8 p-2 md:p-4"
           style={{
             borderColor: color.isDark()
               ? color.lighten(15).toHSLA()
@@ -119,7 +123,7 @@ const FSColorPage = () => {
           }}
         >
           <input
-            className="text-4xl w-56 md:text-6xl md:w-96 text-center font-bold bg-inherit"
+            className="w-56 bg-inherit text-center font-bold text-4xl md:w-96 md:text-6xl"
             onFocus={() => toggleIsInputFocused(true)}
             onBlur={() => toggleIsInputFocused(false)}
             value={currentInput}
@@ -139,11 +143,12 @@ const FSColorPage = () => {
           </label>
         </div>
 
-        <div className="space-y-5 flex flex-col justify-center">
+        <div className="flex flex-col justify-center space-y-5">
           <p>
             Press{' '}
             <button
-              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              type="button"
+              className="cursor-pointer rounded-lg px-4 py-2 font-bold"
               onClick={() => setRandomColor()}
               style={{
                 color: color.toHSLA(),
@@ -159,7 +164,8 @@ const FSColorPage = () => {
           <p>
             Press{' '}
             <button
-              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              type="button"
+              className="cursor-pointer rounded-lg px-4 py-2 font-bold"
               onClick={() => toggleFullscreen()}
               style={{
                 color: color.toHSLA(),
@@ -175,7 +181,8 @@ const FSColorPage = () => {
           <p>
             Press{' '}
             <button
-              className="font-bold py-2 px-4 rounded-lg cursor-pointer"
+              type="button"
+              className="cursor-pointer rounded-lg px-4 py-2 font-bold"
               onClick={() => setIsUIHidden(!isUIHidden)}
               style={{
                 color: color.toHSLA(),
@@ -192,7 +199,7 @@ const FSColorPage = () => {
       </div>
 
       <footer
-        className={clsx('font-bold text-base flex space-x-2 py-2', {
+        className={clsx('flex space-x-2 py-2 font-bold text-base', {
           hidden: isUIHidden,
         })}
       >

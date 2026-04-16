@@ -36,6 +36,11 @@
       "trailingCommas": "all"
     }
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "files": {
     "includes": ["**", "!**/node_modules", "!**/.next", "!**/out", "!**/dist"]
   }

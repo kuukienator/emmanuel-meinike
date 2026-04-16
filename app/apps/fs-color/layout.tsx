@@ -1,6 +1,3 @@
-import { Metadata } from 'next';
-import { Rubik, Zilla_Slab } from 'next/font/google';
-
 import '../../globals.css';
 
 export default function RootLayout({

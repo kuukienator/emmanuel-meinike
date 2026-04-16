@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import React from 'react';
 import type { LinkElement } from '../../components/Link';
 import { APPS } from '../../data';
 
@@ -11,14 +10,14 @@ export const metadata: Metadata = {
 const AppsPage = () => {
   const links: Array<LinkElement> = [...APPS];
   return (
-    <main className="px-4 py-8 md:px-10 flex justify-center flex-col items-center bg-primary flex-grow">
-      <h1 className="font-serif text-4xl text-left mb-8 font-bold sm:text-6xl text-highlight">
+    <main className="flex flex-grow flex-col items-center justify-center bg-primary px-4 py-8 md:px-10">
+      <h1 className="mb-8 text-left font-bold font-serif text-4xl text-highlight sm:text-6xl">
         <p>Ema&#39;s Apps</p>
       </h1>
-      <div className="flex flex-col text-xl text-center uppercase">
+      <div className="flex flex-col text-center text-xl uppercase">
         {links.map((link) => (
           <a
-            className="p-3  mb-3 bg-highlight text-copy hover:opacity-80 w-64"
+            className="mb-3 w-64 bg-highlight p-3 text-copy hover:opacity-80"
             key={link.label + link.url}
             href={link.url}
             target="_blank"

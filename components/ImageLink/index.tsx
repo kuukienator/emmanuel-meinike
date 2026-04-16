@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import React, { type FC } from 'react';
-import CustomLink from '../Link';
+import type { FC } from 'react';
 
 type ImageWithDimensions = {
   url: string;
@@ -27,8 +26,8 @@ export const ImageLink: FC<Props> = ({
   url,
   images,
 }) => (
-  <div className="p-2 flex flex-col overflow-hidden sm:w-1/2 lg:w-1/3 xl:w-1/4 mb-6 text-copy justify-between items-end">
-    <div className="border-b-4 border-primary sm:border-none">
+  <div className="mb-6 flex flex-col items-end justify-between overflow-hidden p-2 text-copy sm:w-1/2 lg:w-1/3 xl:w-1/4">
+    <div className="border-primary border-b-4 sm:border-none">
       <Link
         href={url}
         target="_blank"
@@ -45,7 +44,7 @@ export const ImageLink: FC<Props> = ({
           style={{ height: '300px', objectFit: 'cover', width: '100%' }}
         />
       </Link>
-      <div className="py-2 h-24">
+      <div className="h-24 py-2">
         <p className="font-bold text-lg">{title}</p>
         <p>{description}</p>
       </div>

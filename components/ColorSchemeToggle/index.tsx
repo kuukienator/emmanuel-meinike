@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 const colorSchemes = [
   // { name: 'Scheme 3', class: 'color-scheme-3', color: '#f26419' },
@@ -23,17 +23,20 @@ const ColorSchemeToggle: FC = () => {
   }, [currentScheme]);
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed right-5 bottom-5">
       <div className="pb-3">
         {isExpanded && (
-          <div
-            className="fixed top-0 bottom-0 left-0 right-0 opacity-75 bg-black -z-10"
+          <button
+            type="button"
+            className="fixed top-0 right-0 bottom-0 left-0 -z-10 bg-black opacity-75"
             onClick={() => toggleIsExpanded(!isExpanded)}
-          ></div>
+            aria-label="Close color scheme picker"
+          />
         )}
         {isExpanded &&
           colorSchemes.map((c, i) => (
-            <div
+            <button
+              type="button"
               key={c.name + c.class}
               className="flex items-center"
               onClick={() => {
@@ -43,17 +46,19 @@ const ColorSchemeToggle: FC = () => {
             >
               <span className="mr-3 text-highlight text-xl">{c.name}</span>
               <div
-                className="border-4 w-16 h-16 rounded-full mb-2"
+                className="mb-2 h-16 w-16 rounded-full border-4"
                 style={{ backgroundColor: c.color }}
-              ></div>
-            </div>
+              />
+            </button>
           ))}
       </div>
-      <div
-        className="border-4 w-16 h-16 rounded-full shadow-md ml-auto z-10"
+      <button
+        type="button"
+        className="z-10 ml-auto h-16 w-16 rounded-full border-4 shadow-md"
         style={{ backgroundColor: colorSchemes[currentScheme].color }}
         onClick={() => toggleIsExpanded(!isExpanded)}
-      ></div>
+        aria-label="Toggle color scheme picker"
+      />
     </div>
   );
 };

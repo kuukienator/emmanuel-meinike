@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import type { FC } from 'react';
 import Link, { type LinkElement } from '../Link';
 
 type Props = {

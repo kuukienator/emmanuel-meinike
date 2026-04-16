@@ -1,6 +1,6 @@
 'use client';
 
-import React, { type FC, type ReactElement, useEffect, useState } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 
 type Props = {
   gifs: Array<string>;
@@ -24,19 +24,21 @@ const ErrorContainer: FC<Props> = ({ gifs, label, message }) => {
   }, [gifs]);
 
   return (
-    <main className="px-4 py-8 md:px-10 flex justify-center flex-col items-center bg-primary flex-grow">
-      <h1 className="font-serif text-center mb-8 font-bold sm:text-6xl text-highlight">
-        <p className="text-9xl mb-2">{label}</p>
-        <div
+    <main className="flex flex-grow flex-col items-center justify-center bg-primary px-4 py-8 md:px-10">
+      <h1 className="mb-8 text-center font-bold font-serif text-highlight sm:text-6xl">
+        <p className="mb-2 text-9xl">{label}</p>
+        <button
+          type="button"
           style={{ width: '250px', height: '250px' }}
           className="mx-auto mb-2"
           onClick={() => setGif(getRandomGif(gifs))}
+          aria-label="Show another gif"
         >
           {gif !== '' && <img width="250" height="250" src={gif} alt="" />}
-        </div>
-        <p className="text-3xl font-sans">{message}</p>
+        </button>
+        <p className="font-sans text-3xl">{message}</p>
       </h1>
-      <div className="flex flex-col text-xl text-center uppercase"></div>
+      <div className="flex flex-col text-center text-xl uppercase"></div>
     </main>
   );
 };

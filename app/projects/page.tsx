@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import ImageLink from '../../components/ImageLink';
+import SectionHeader from '../../components/SectionHeader';
+import { STUFF } from '../../data/stuff';
 
 export const metadata: Metadata = {
   title: 'Ema (Emmanuel Meinike) - projects',
@@ -8,13 +11,20 @@ export const metadata: Metadata = {
 const ProjectsPage = () => (
   <div>
     <main className="mt-8 px-4 md:px-10">
-      <h1
-        className="mb-8 text-left font-bold text-4xl sm:text-6xl"
-        style={{ fontFamily: "'Roboto Slab', serif" }}
-      >
-        <p>Here are my Projects</p>
-      </h1>
-      <p className="text-xl">There are no projects yet 😢</p>
+      <SectionHeader leftContent="#">Here is more Stuff!</SectionHeader>
+      <div className="flex flex-col flex-wrap sm:flex-row items-center">
+        {STUFF.map((i) => (
+          <ImageLink
+            key={i.image + i.altText}
+            altText={i.altText}
+            description={i.description}
+            image={i.image}
+            images={i.images}
+            title={i.title}
+            url={i.url}
+          />
+        ))}
+      </div>
     </main>
   </div>
 );

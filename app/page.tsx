@@ -17,7 +17,6 @@ type ExternalLinkProps = {
   links: Array<LinkElement>;
 };
 
-
 const ExternalLink: FC<ExternalLinkProps> = ({ name, links }) => {
   const link = links.find((l) => l.label === name);
   return <Link url={link?.url || ''} label={link?.label || ''} />;
@@ -64,8 +63,8 @@ export default function Page() {
         <SectionHeader leftContent="#">
           Wanna see some cool things?
         </SectionHeader>
-        <div className="flex flex-col flex-wrap sm:flex-row">
-          {STUFF.map((i) => (
+        <div className="flex flex-col flex-wrap sm:flex-row items-center">
+          {STUFF.filter((i) => i.highlight === true).map((i) => (
             <ImageLink
               key={i.image + i.altText}
               altText={i.altText}

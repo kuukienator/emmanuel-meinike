@@ -13,13 +13,13 @@ const HEADER_LINKS = [
     label: 'Links.',
   },
   {
+    path: '/projects',
+    label: 'Stuff.',
+  },
+  {
     path: '/apps',
     label: 'Apps.',
   },
-  // {
-  //   path: '/projects',
-  //   label: 'Projects.',
-  // },
   // {
   //   path: '/blog',
   //   label: 'Blog.',

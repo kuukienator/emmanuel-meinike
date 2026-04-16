@@ -1,5 +1,4 @@
-import { Metadata } from 'next';
-import React from 'react';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Ema (Emmanuel Meinike) - blog',
@@ -8,9 +7,9 @@ export const metadata: Metadata = {
 
 const BlogPage = () => (
   <div>
-    <main className="px-4 mt-8 md:px-10">
+    <main className="mt-8 px-4 md:px-10">
       <h1
-        className="text-4xl text-left mb-8 font-bold sm:text-6xl"
+        className="mb-8 text-left font-bold text-4xl sm:text-6xl"
         style={{ fontFamily: "'Roboto Slab', serif" }}
       >
         <p>Welcome to my blog!</p>

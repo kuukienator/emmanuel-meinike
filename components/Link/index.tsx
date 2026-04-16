@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
 
 export type LinkElement = {
   url: string;
@@ -8,7 +8,7 @@ export type LinkElement = {
 
 const Link: FC<LinkElement> = ({ label, url, blank }) => (
   <a
-    className="px-1 border-b-2 font-bold hover:text-highlight hover:bg-copy border-current"
+    className="border-current border-b-2 px-1 font-bold hover:bg-copy hover:text-highlight"
     target={blank ? '_blank' : '_self'}
     rel="noopener noreferrer"
     href={url}

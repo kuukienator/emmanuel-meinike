@@ -1,3 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: rgb(36, 65, 63);
+  --color-highlight: rgb(238, 235, 232);
+  --color-copy: black;
+
+  --font-sans: var(--font-rubik), sans-serif;
+  --font-serif: var(--font-zilla-slab), serif;
+}
+
 :root {
   --primary: rgb(36, 65, 63);
 }
@@ -11,7 +22,7 @@
 }
 
 .color-scheme-3 {
-  --primary: #f26419;;
+  --primary: #f26419;
 }
 
 .color-scheme-4 {
@@ -30,9 +41,9 @@ body {
 }
 
 #__next {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {

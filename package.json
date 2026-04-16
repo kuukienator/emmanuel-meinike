@@ -1,29 +1,27 @@
 {
   "name": "emmanuel-meinike",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
   },
   "dependencies": {
-    "clsx": "^2.0.0",
-    "next": "^14.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "2.1.1",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1",
-    "@types/node": "^18.18.7",
-    "@types/react": "^18.2.33",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.0",
-    "postcss": "^8.4.31",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "@biomejs/biome": "2.4.12",
+    "@tailwindcss/postcss": "4.2.2",
+    "@types/node": "24.12.2",
+    "@types/react": "19.2.14",
+    "postcss": "8.5.10",
+    "tailwindcss": "4.2.2",
+    "typescript": "6.0.2"
   }
 }

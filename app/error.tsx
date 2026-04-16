@@ -5,8 +5,8 @@ import Link from '../components/Link';
 
 const GIFS = ['https://media.giphy.com/media/xUPGcLyG1vxvvkE2U8/giphy.gif'];
 
-export default function Error({
-  error,
+export default function ErrorPage({
+  error: _error,
   reset,
 }: {
   error: Error & { digest?: string };
@@ -25,6 +25,7 @@ export default function Error({
         }
       />
       <button
+        type="button"
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()

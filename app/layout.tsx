@@ -1,10 +1,9 @@
-import { Metadata } from 'next';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import type { Metadata } from 'next';
 import { Rubik, Zilla_Slab } from 'next/font/google';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 import './globals.css';
-import 'tailwindcss/tailwind.css';
 
 const rubik = Rubik({
   subsets: ['latin'],

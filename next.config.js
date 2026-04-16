@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [{ loader: '@svgr/webpack' }],
+        as: '*.js',
+      },
+    },
+  },
   output: 'export',
-  swcMinify: true,
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({

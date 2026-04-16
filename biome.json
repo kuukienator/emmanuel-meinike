@@ -42,6 +42,13 @@
     }
   },
   "files": {
-    "includes": ["**", "!**/node_modules", "!**/.next", "!**/out", "!**/dist", "!next-env.d.ts"]
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/out",
+      "!**/dist",
+      "!next-env.d.ts"
+    ]
   }
 }

@@ -16,7 +16,7 @@
     "react-dom": "19.2.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.12",
     "@svgr/webpack": "6.5.1",
     "@tailwindcss/postcss": "4.2.2",
     "@types/node": "24.12.2",

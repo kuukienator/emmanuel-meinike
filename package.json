@@ -20,7 +20,7 @@
     "@tailwindcss/postcss": "4.2.2",
     "@types/node": "24.12.2",
     "@types/react": "19.2.14",
-    "postcss": "8.5.18",
+    "postcss": "8.5.24",
     "tailwindcss": "4.2.2",
     "typescript": "6.0.2"
   }

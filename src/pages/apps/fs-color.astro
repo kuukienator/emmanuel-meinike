@@ -9,3 +9,10 @@ import Layout from '../../layouts/Layout.astro';
 >
   <FSColor />
 </Layout>
+
+<style is:global>
+  /* Hide the site header while the app is in fullscreen */
+  :root:fullscreen body > header {
+    display: none;
+  }
+</style>

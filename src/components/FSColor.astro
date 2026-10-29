@@ -1,0 +1,203 @@
+---
+import Color from '../lib/color';
+
+const initialColor = new Color(0, 0, 0);
+const accent = initialColor.isDark()
+  ? initialColor.lighten(15).toHSLA()
+  : initialColor.darken(15).toHSLA();
+
+const KEY_BUTTONS = [
+  { key: 'r', label: 'R', text: 'for random.' },
+  { key: 'f', label: 'F', text: 'for fullscreen.' },
+  { key: 'h', label: 'H', text: 'to hide UI.' },
+];
+---
+
+<div
+  class="flex h-screen w-screen flex-col items-center justify-center text-2xl"
+  style={{ backgroundColor: initialColor.toHSLA(), color: accent }}
+  role="application"
+  tabindex="0"
+  data-fs-color
+>
+  <div class="flex h-full flex-col items-center justify-center" data-ui>
+    <div
+      class="mb-8 flex flex-row items-center justify-center rounded-2xl border-8 p-2 md:p-4"
+      style={{ borderColor: accent }}
+      data-accent-border
+    >
+      <input
+        class="w-56 bg-inherit text-center font-bold text-4xl md:w-96 md:text-6xl"
+        value={initialColor.toHex()}
+        data-hex-input
+      />
+      <label class="cursor-pointer">
+        <svg
+          width="1em"
+          height="1em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="text-4xl md:text-6xl"
+          aria-label="Color picker"
+          role="img"
+        >
+          <path
+            d="M7 13.161L12.4644 7.6966C12.8549 7.30607 13.4881 7.30607 13.8786 7.6966L15.9999 9.81792C16.3904 10.2084 16.3904 10.8416 15.9999 11.2321L14.0711 13.161M7 13.161L4.82764 15.3334C4.73428 15.4267 4.66034 15.5376 4.61007 15.6597L3.58204 18.1563C3.07438 19.3892 4.30728 20.6221 5.54018 20.1145L8.03681 19.0865C8.1589 19.0362 8.26981 18.9622 8.36317 18.8689L14.0711 13.161M7 13.161H14.0711"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M13.878 3.45401L15.9993 5.57533M20.242 9.81798L18.1206 7.69666M15.9993 5.57533L17.4135 4.16112C17.8041 3.7706 18.4372 3.7706 18.8277 4.16112L19.5349 4.86823C19.9254 5.25875 19.9254 5.89192 19.5349 6.28244L18.1206 7.69666M15.9993 5.57533L18.1206 7.69666"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <input type="color" class="hidden" data-color-input />
+      </label>
+    </div>
+
+    <div class="flex flex-col justify-center space-y-5">
+      {
+        KEY_BUTTONS.map((b) => (
+          <p>
+            Press{' '}
+            <button
+              type="button"
+              class="cursor-pointer rounded-lg px-4 py-2 font-bold"
+              style={{ color: initialColor.toHSLA(), backgroundColor: accent }}
+              data-key={b.key}
+            >
+              {b.label}
+            </button>{' '}
+            {b.text}
+          </p>
+        ))
+      }
+    </div>
+  </div>
+
+  <footer class="flex space-x-2 py-2 font-bold text-base" data-ui>
+    <a
+      href="https://twitter.com/kuukienator"
+      referrerpolicy="no-referrer"
+      target="_blank"
+      rel="noreferrer"
+    >
+      @kuukienator
+    </a>
+    <span>|</span>
+    <a
+      href="https://www.ema.codes/"
+      referrerpolicy="no-referrer"
+      target="_blank"
+      rel="noreferrer"
+    >
+      ema.codes
+    </a>
+    <span>|</span>
+    <span>2021</span>
+  </footer>
+</div>
+
+<script>
+  import Color from '../lib/color';
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
+
+  const root = document.querySelector<HTMLElement>('[data-fs-color]');
+
+  if (root) {
+    const uiElements = root.querySelectorAll<HTMLElement>('[data-ui]');
+    const accentBorder = root.querySelector<HTMLElement>('[data-accent-border]');
+    const hexInput = root.querySelector<HTMLInputElement>('[data-hex-input]');
+    const colorInput =
+      root.querySelector<HTMLInputElement>('[data-color-input]');
+    const keyButtons = root.querySelectorAll<HTMLButtonElement>('[data-key]');
+
+    let isInputFocused = false;
+    let isUIHidden = false;
+
+    const setColor = (color: Color) => {
+      const accent = color.isDark()
+        ? color.lighten(15).toHSLA()
+        : color.darken(15).toHSLA();
+
+      root.style.backgroundColor = color.toHSLA();
+      root.style.color = accent;
+      if (accentBorder) {
+        accentBorder.style.borderColor = accent;
+      }
+      for (const button of keyButtons) {
+        button.style.color = color.toHSLA();
+        button.style.backgroundColor = accent;
+      }
+    };
+
+    const setColorAndInput = (color: Color) => {
+      setColor(color);
+      if (hexInput) {
+        hexInput.value = color.toHex();
+      }
+    };
+
+    const setIsUIHidden = (hidden: boolean) => {
+      isUIHidden = hidden;
+      for (const el of uiElements) {
+        el.classList.toggle('hidden', hidden);
+      }
+    };
+
+    const actions: Record<string, () => void> = {
+      r: () => setColorAndInput(Color.random()),
+      f: toggleFullscreen,
+      h: () => setIsUIHidden(!isUIHidden),
+    };
+
+    for (const button of keyButtons) {
+      button.addEventListener('click', () => actions[button.dataset.key ?? '']?.());
+    }
+
+    hexInput?.addEventListener('focus', () => {
+      isInputFocused = true;
+    });
+    hexInput?.addEventListener('blur', () => {
+      isInputFocused = false;
+    });
+    hexInput?.addEventListener('input', () => {
+      try {
+        setColor(Color.fromHex(hexInput.value));
+      } catch (_e) {}
+    });
+
+    colorInput?.addEventListener('input', () => {
+      setColorAndInput(Color.fromHex(colorInput.value));
+    });
+
+    root.addEventListener('keydown', (e) => {
+      if (isInputFocused) {
+        return;
+      }
+
+      actions[e.key]?.();
+      if (e.key === 'Escape') {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      setIsUIHidden(Boolean(document.fullscreenElement));
+    });
+  }
+</script>

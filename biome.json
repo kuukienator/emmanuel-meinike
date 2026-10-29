@@ -11,16 +11,9 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "correctness": {
-        "useExhaustiveDependencies": "warn",
-        "useHookAtTopLevel": "error"
-      },
       "nursery": {
         "useSortedClasses": {
-          "level": "warn",
-          "options": {
-            "functions": ["clsx"]
-          }
+          "level": "warn"
         }
       },
       "performance": {

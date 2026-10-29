@@ -10,7 +10,7 @@
 
 # astro
 /.astro/
-/out/
+/dist/
 
 # production
 /build

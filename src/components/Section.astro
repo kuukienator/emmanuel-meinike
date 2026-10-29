@@ -1,0 +1,16 @@
+---
+type Props = {
+  primary?: boolean;
+};
+
+const { primary } = Astro.props;
+---
+
+<section
+  class:list={[
+    'border-black p-4 text-lg md:px-10 md:text-xl xl:px-24',
+    { 'border-white bg-primary text-copy': primary },
+  ]}
+>
+  <slot />
+</section>

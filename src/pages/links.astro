@@ -1,0 +1,35 @@
+---
+import { CODE, CONTACT, type LinkElement } from '../data';
+import Layout from '../layouts/Layout.astro';
+
+const links: Array<LinkElement> = [...CODE, ...CONTACT];
+---
+
+<Layout
+  title="Ema (Emmanuel Meinike) - links"
+  description="Emmanuel Meinike links"
+>
+  <main
+    class="flex flex-grow flex-col items-center justify-center bg-primary px-4 py-8 md:px-10"
+  >
+    <h1
+      class="mb-8 text-left font-bold font-serif text-4xl text-highlight sm:text-6xl"
+    >
+      <p>Ema&#39;s Links</p>
+    </h1>
+    <div class="flex flex-col text-center text-xl uppercase">
+      {
+        links.map((link) => (
+          <a
+            class="mb-3 w-36 bg-highlight p-3 text-copy hover:opacity-80"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

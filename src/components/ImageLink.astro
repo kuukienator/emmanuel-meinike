@@ -1,0 +1,36 @@
+---
+import type { StuffLinkType } from '../data/stuff';
+
+type Props = Omit<StuffLinkType, 'highlight'>;
+
+const { altText, description, image, title, url, images } = Astro.props;
+
+const srcSet = images.map((i) => `${i.url} ${i.w}w`).join(',');
+---
+
+<div
+  class="mb-6 flex flex-col items-end justify-between overflow-hidden p-2 text-copy sm:w-1/2 lg:w-1/3 xl:w-1/4"
+>
+  <div class="border-primary border-b-4 sm:border-none">
+    <a
+      href={url}
+      target="_blank"
+      class="block overflow-hidden"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="transform transition duration-50 hover:scale-110 hover:opacity-50"
+        src={image}
+        srcset={srcSet}
+        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+        alt={altText}
+        loading="lazy"
+        style={{ height: '300px', objectFit: 'cover', width: '100%' }}
+      />
+    </a>
+    <div class="h-24 py-2">
+      <p class="font-bold text-lg">{title}</p>
+      <p>{description}</p>
+    </div>
+  </div>
+</div>

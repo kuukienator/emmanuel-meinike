@@ -1,11 +1,14 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "linter": {
     "enabled": true,
-    "domains": {
-      "next": "all"
-    },
     "rules": {
       "recommended": true,
       "correctness": {
@@ -42,13 +45,19 @@
     }
   },
   "files": {
-    "includes": [
-      "**",
-      "!**/node_modules",
-      "!**/.next",
-      "!**/out",
-      "!**/dist",
-      "!next-env.d.ts"
-    ]
-  }
+    "includes": ["**", "!**/node_modules", "!**/.astro", "!**/out", "!**/dist"]
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          }
+        }
+      }
+    }
+  ]
 }

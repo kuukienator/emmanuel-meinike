@@ -1,0 +1,31 @@
+---
+import ImageLink from '../components/ImageLink.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { STUFF } from '../data/stuff';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Ema (Emmanuel Meinike) - projects"
+  description="Emmanuel Meinike projects"
+>
+  <div>
+    <main class="mt-8 px-4 md:px-10">
+      <SectionHeader leftContent="#">Here is more Stuff!</SectionHeader>
+      <div class="flex flex-col flex-wrap items-center sm:flex-row">
+        {
+          STUFF.map((i) => (
+            <ImageLink
+              altText={i.altText}
+              description={i.description}
+              image={i.image}
+              images={i.images}
+              title={i.title}
+              url={i.url}
+            />
+          ))
+        }
+      </div>
+    </main>
+  </div>
+</Layout>

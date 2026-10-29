@@ -1,0 +1,18 @@
+---
+import FSColor from '../../components/FSColor.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Ema (Emmanuel Meinike) - FS Color"
+  description="Emmanuel Meinike FS Color app"
+>
+  <FSColor />
+</Layout>
+
+<style is:global>
+  /* Hide the site header while the app is in fullscreen */
+  :root:fullscreen body > header {
+    display: none;
+  }
+</style>

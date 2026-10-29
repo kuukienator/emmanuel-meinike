@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "@fontsource/rubik/latin-400.css";
+@import "@fontsource/rubik/latin-700.css";
+@import "@fontsource/zilla-slab/latin-400.css";
+@import "@fontsource/zilla-slab/latin-700.css";
+
+@theme {
+  --color-primary: rgb(36, 65, 63);
+  --color-highlight: rgb(238, 235, 232);
+  --color-copy: black;
+
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Zilla Slab", serif;
+}
+
+:root {
+  --primary: rgb(36, 65, 63);
+}
+
+.color-scheme-1 {
+  --primary: rgb(211, 118, 98);
+}
+
+.color-scheme-2 {
+  --primary: rgb(36, 65, 63);
+}
+
+.color-scheme-3 {
+  --primary: #f26419;
+}
+
+.color-scheme-4 {
+  --primary: #4c3a4f;
+}
+
+.color-scheme-5 {
+  --primary: #f8c973;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(238, 235, 232);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

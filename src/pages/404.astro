@@ -1,0 +1,20 @@
+---
+import ErrorContainer from '../components/ErrorContainer.astro';
+import Link from '../components/Link.astro';
+import Layout from '../layouts/Layout.astro';
+
+const GIFS = [
+  'https://media.giphy.com/media/VhzOTQPuNZwM0xMIOn/giphy.gif',
+  'https://media.giphy.com/media/xRvMWkuZt2ChfdtdUv/giphy.gif',
+  'https://media.giphy.com/media/1pIBvIHRtLNOsDXXzA/giphy.gif',
+  'https://media.giphy.com/media/RJiEXM2vreYQFdagyA/giphy.gif',
+  'https://media.giphy.com/media/24FCKQU007NTI0YoZO/giphy.gif',
+  'https://media.giphy.com/media/1zKf0WqsXFhssE2c7e/giphy.gif',
+];
+---
+
+<Layout title="Ema (Emmanuel Meinike) - 404" description="Emmanuel Meinike 404">
+  <ErrorContainer gifs={GIFS} label="404">
+    You look lost, maybe you should go <Link url="/" label="Home" />.
+  </ErrorContainer>
+</Layout>

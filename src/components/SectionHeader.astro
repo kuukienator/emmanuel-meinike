@@ -1,0 +1,16 @@
+---
+type Props = {
+  leftContent?: string;
+};
+
+const { leftContent } = Astro.props;
+---
+
+<h2
+  class="relative mt-8 mb-8 rounded-xl py-3 text-left font-bold font-serif text-3xl text-primary md:text-5xl"
+>
+  <div class="flex">
+    {leftContent && <span class="mr-3 text-primary">{leftContent}</span>}
+    <slot />
+  </div>
+</h2>

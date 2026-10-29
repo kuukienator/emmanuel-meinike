@@ -1,0 +1,56 @@
+---
+type Props = {
+  gifs: Array<string>;
+  label: string;
+};
+
+const { gifs, label } = Astro.props;
+---
+
+<main
+  class="flex flex-grow flex-col items-center justify-center bg-primary px-4 py-8 md:px-10"
+>
+  <h1
+    class="mb-8 text-center font-bold font-serif text-highlight sm:text-6xl"
+  >
+    <p class="mb-2 text-9xl">{label}</p>
+    <button
+      type="button"
+      style={{ width: '250px', height: '250px' }}
+      class="mx-auto mb-2"
+      aria-label="Show another gif"
+      data-error-gifs={JSON.stringify(gifs)}
+    >
+      <img width="250" height="250" alt="" hidden />
+    </button>
+    <p class="font-sans text-3xl"><slot /></p>
+  </h1>
+  <div class="flex flex-col text-center text-xl uppercase"></div>
+</main>
+
+<script>
+  const getRandomInt = (min: number, max: number) => {
+    const _min = Math.ceil(min);
+    const _max = Math.floor(max);
+    return Math.floor(Math.random() * (_max - _min) + _min);
+  };
+
+  const getRandomGif = (gifs: Array<string>) =>
+    gifs[getRandomInt(0, gifs.length)];
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>(
+    '[data-error-gifs]',
+  )) {
+    const gifs: Array<string> = JSON.parse(button.dataset.errorGifs ?? '[]');
+    const img = button.querySelector('img');
+    if (!img) continue;
+
+    const showRandomGif = () => {
+      img.src = getRandomGif(gifs);
+      img.hidden = false;
+    };
+
+    showRandomGif();
+    button.addEventListener('click', showRandomGif);
+  }
+</script>

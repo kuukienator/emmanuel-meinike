@@ -1,0 +1,123 @@
+---
+import ImageLink from '../components/ImageLink.astro';
+import Link from '../components/Link.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { CODE, CONTACT, type LinkElement } from '../data';
+import { STUFF } from '../data/stuff';
+import Layout from '../layouts/Layout.astro';
+
+const findLink = (links: Array<LinkElement>, name: string) => {
+  const link = links.find((l) => l.label === name);
+  return { url: link?.url || '', label: link?.label || '' };
+};
+---
+
+<Layout
+  title="Ema (Emmanuel Meinike) - landing page"
+  description="Emmanuel Meinike landing page"
+>
+  <main class="relative text-copy">
+    <Section primary>
+      <div class="flex flex-col md:mb-6 md:flex-row">
+        <img
+          width="250px"
+          height="250px"
+          class="h-full self-center rounded-full bg-cover bg-no-repeat md:mr-6"
+          src="/images/me-500.jpg"
+          srcset="/images/me-250.jpg, /images/me-500.jpg 2x"
+          alt="Emmanuel Meinike - Headshot"
+          style={{ backgroundImage: 'url(/images/me-100-dither.jpg)' }}
+        />
+        <h1
+          class="my-8 text-left font-bold font-serif text-4xl text-highlight sm:text-6xl lg:text-7xl"
+        >
+          <p>Hi, I&apos;m Ema <span class="font-normal">👋</span>,</p>
+          <p>web developer and creative coder.</p>
+        </h1>
+      </div>
+      <div class="mb-8 h-2 w-full max-w-xl bg-highlight"></div>
+      <p class="mb-4 max-w-xl text-highlight text-xl">
+        I like building things big and small. Currently I focus on using web
+        technologies to build awesome user experiences and express myself
+        creatively.
+      </p>
+      <p class="mb-4 max-w-xl text-highlight text-xl">
+        You can hit me up on <Link {...findLink(CONTACT, 'Twitter')} />{' '}
+        or send me an <Link {...findLink(CONTACT, 'E-mail')} /> if you have any
+        questions.
+      </p>
+    </Section>
+    <Section>
+      <SectionHeader leftContent="#">Wanna see some cool things?</SectionHeader>
+      <div class="flex flex-col flex-wrap items-center sm:flex-row">
+        {
+          STUFF.filter((i) => i.highlight === true).map((i) => (
+            <ImageLink
+              altText={i.altText}
+              description={i.description}
+              image={i.image}
+              images={i.images}
+              title={i.title}
+              url={i.url}
+            />
+          ))
+        }
+      </div>
+      <div class="flex flex-row-reverse">
+        <Link url="/projects" label="see more stuff >" />
+      </div>
+    </Section>
+    <Section>
+      <SectionHeader leftContent="#">Wanna know more about me?</SectionHeader>
+      <p class="mb-2">
+        Working with Javascript (and Typescript) while using frameworks like
+        React/NextJS, NodeJS and the browser Canvas make me happy. I also dabble
+        in other languages like C# and Scala from time to time as well.
+      </p>
+      <p class="mb-2">
+        Apart from this, I also enjoy drawing, 3D modelling and game
+        developement. As you can see, I also try my hand in designing every now
+        and then.
+      </p>
+    </Section>
+    <Section primary>
+      <p
+        class="my-10 flex flex-col text-center font-bold font-serif text-2xl text-highlight"
+      >
+        <span>
+          Hold on there! Hope you are having an awesome day{' '}
+          <span class="font-normal">😎✌</span>.
+        </span>
+        <span>Scroll on!</span>
+      </p>
+    </Section>
+    <Section>
+      <SectionHeader leftContent="#">Wanna see some code?</SectionHeader>
+      <p class="mb-2">
+        You can find my bigger projects and apps on{' '}
+        <Link {...findLink(CODE, 'GitHub')} />. For smaller sketches and ideas,
+        checkout my <Link {...findLink(CODE, 'Codepen')} />.
+      </p>
+    </Section>
+    <Section>
+      <SectionHeader leftContent="#">Wanna talk and connect?</SectionHeader>
+      <p class="mb-2">
+        We can connect on
+        <Link {...findLink(CONTACT, 'Twitter')} /> or you can reach out with <Link
+          {...findLink(CONTACT, 'E-mail')}
+        />. I you want to see a more formal overview, head on over to{' '}
+        <Link {...findLink(CONTACT, 'LinkedIn')} /> or{' '}
+        <Link {...findLink(CONTACT, 'Xing')} />.
+      </p>
+    </Section>
+    <Section primary>
+      <p
+        class="my-10 flex flex-col text-center font-bold font-serif text-2xl text-highlight"
+      >
+        <span>Thanks for stopping by <span class="font-normal">👋</span>.</span>
+        <span>See you later.</span>
+      </p>
+    </Section>
+  </main>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import type { LinkElement } from '../data';
+import Link from './Link.astro';
+
+type Props = {
+  links: Array<LinkElement>;
+};
+
+const { links } = Astro.props;
+---
+
+<ul class="flex justify-center pb-4 text-highlight">
+  {
+    links.map((c) => (
+      <li class="mx-2">
+        <Link label={c.label} url={c.url} />
+      </li>
+    ))
+  }
+</ul>

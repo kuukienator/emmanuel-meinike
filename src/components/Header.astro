@@ -1,0 +1,44 @@
+---
+const HEADER_LINKS = [
+  {
+    path: '/',
+    label: 'Home.',
+  },
+  {
+    path: '/links',
+    label: 'Links.',
+  },
+  {
+    path: '/projects',
+    label: 'Stuff.',
+  },
+  {
+    path: '/apps',
+    label: 'Apps.',
+  },
+  // {
+  //   path: '/blog',
+  //   label: 'Blog.',
+  // },
+];
+
+// Normalize "/links.html" and "/links/" to "/links"
+const pathname =
+  Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1') || '/';
+---
+
+<header
+  class="flex flex-row flex-row-reverse items-center justify-between bg-primary px-4 pt-2 pb-2 font-light font-serif text-highlight text-lg md:px-10 xl:px-24"
+>
+  <nav>
+    <ul class="flex">
+      {
+        HEADER_LINKS.map((l) => (
+          <li class:list={['mx-1 p-1 px-1', { 'font-bold': l.path === pathname }]}>
+            <a href={l.path}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
